@@ -1,10 +1,13 @@
-# The retail protocol: Match of the Millennium ↔ Millennium Fight 2000
+# The retail protocol
 
 What *SNK vs. Capcom: The Match of the Millennium* (NGPC, "MOTM") and
 *Capcom vs. SNK: Millennium Fight 2000* (Dreamcast, Japan Rev A, "MF2K")
-say to each other over the link cable, as captured through this bridge.
-Every frame quoted here is in [`captures/retail/`](../captures/retail/), and
-`python tools/frames.py <log>` reproduces the listings.
+say to each other over the link cable, as captured through this bridge;
+and, further down, how the same protocol carries MOTM's and *King of
+Fighters R-2*'s uploads to *The King of Fighters Dream Match 1999*
+(Dreamcast, Japan, "DM99"). Every frame quoted here is in
+[`captures/`](../captures/), and `python tools/frames.py <log>` reproduces
+the listings.
 
 Offsets count from the opening `FF` (offset 0). "Hypothesis" marks anything
 not confirmed by at least two independent data points.
@@ -112,9 +115,12 @@ offset  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22
         FF 00 10 00 00 00 00 00 00 00 00 1C 00 00 04 00 00 0C 00 00 10 00 FF
 ```
 
-Constant across every capture. Values at offsets 11, 14, 17, 20.
-*Hypothesis:* these describe what MF2K offers or expects (unlock categories,
-in the guide's terms); their meaning is not decoded.
+Constant across every MF2K capture. The values at offsets 11, 14, 17 and
+20 depend on the Dreamcast game: DM99 answers `51 04 47 0A` instead of
+`1C 04 0C 10`, and MOTM formats its data frame differently for each (see
+[Dream Match 1999](#the-king-of-fighters-dream-match-1999)). Their exact
+meaning is not decoded; at the least they tell the NGPC game who is on the
+other end.
 
 ### Announce (NGPC → DC, 16 bytes) and reply (DC → NGPC, 17 bytes)
 
@@ -134,15 +140,20 @@ one byte longer and differs at offsets 3-5.
 | 1-2 | `00 10` | command, same as the other data-phase frames |
 | 3-5 | `00 00 02` | subtype (hypothesis: "points follow") |
 | 6-9 | `00 00 00 00` | |
-| 10 | `48` | **VS Points + 7** (4 data points: 60→`43`, 65→`48`, 25→`20`, 40→`2F`) |
+| 10 | `48` | **checksum** (hypothesis, fits all four data frames seen): the sum of the bytes from offset 11 to the end of the payload, leaving out the `06`/`02` field byte — here `01` + `06` + `41` |
 | 11-12 | `00 00` | |
-| 13-14 | `06 01` | |
+| 13 | `06` | hypothesis: a length or type field; it is `02` in DM99's shorter frame |
+| 14 | `01` | |
 | 15-18 | `00 00 00 00` | |
 | 19 | `06` | |
-| 20-21 | `00 00` | |
-| 22 | `41` | **VS Points**, raw binary (60→`3C`, 65→`41`, 25→`19`, 40→`28`) |
-| 23 | `00` | hypothesis: high byte of a 16-bit little-endian count (the guide gives a 0-9999 range); never seen non-zero |
+| 20 | `00` | |
+| 21-22 | `00 41` | **VS Points**, hypothesis 16-bit big-endian (60→`3C`, 65→`41`, 25→`19`, 40→`28`; the high byte never seen non-zero) |
+| 23 | `00` | |
 | 24 | `FF` | close |
+
+Offset 10 was first read as "VS Points + 7", which fits every MF2K
+capture only because the other two payload bytes always add up to 7. The
+DM99 frames, with different payloads, show it is a sum.
 
 MF2K echoes the frame byte for byte. That echo is the final confirmation.
 
@@ -198,6 +209,57 @@ and unlocked the eight characters (`captures/retail/live_coalesced_success_*`).
 A real cable has no such gaps: the UART delivers a frame's bytes back to
 back. MOTM was never written to tolerate a pause in the middle.
 
+## The King of Fighters: Dream Match 1999
+
+DM99 links with two NGPC games: MOTM and *King of Fighters R-2*. Both
+uploads went through the bridge unchanged on 2026-11-04
+([`captures/dm99/`](../captures/dm99/)), on DM99's **DOWNLOAD** screen
+(ダウンロード中です → ダウンロードを終了しました).
+
+```
+NGPC->DC  18B  ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff        same request
+DC->NGPC  23B  ff 00 10 00 00 00 00 00 00 00 00 51 00 00 04 00 00 47 00 00 0a 00 ff
+NGPC->DC  16B  ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff             same announce
+DC->NGPC  17B  ff 00 10 00 00 01 00 00 00 00 01 00 00 01 01 00 ff          same reply
+NGPC->DC  19B  ff 00 10 00 00 02 00 00 00 00 64 00 00 02 00 00 64 00 ff    data (MOTM)
+NGPC->DC  19B  ff 00 10 00 00 02 00 00 00 00 01 00 00 02 00 00 01 00 ff    data (R-2)
+```
+
+What this shows:
+
+- **The protocol is shared between NGPC games.** R-2 sends the same request
+  and announce as MOTM, byte for byte; only its cable probe differs (`0x91`
+  instead of `0x92`). R-2 also uses the BIOS comms calls, so the patched
+  core works for it unchanged.
+- **The acknowledgement identifies the Dreamcast game**, and the NGPC side
+  formats its data accordingly: 25 bytes for MF2K, 19 for DM99.
+- **The checksum at offset 10** holds here too: `64` for a payload of
+  `00 00 64 00`, `01` for `00 00 01 00`.
+- A third shape, 21 bytes, all zero, went through once while DM99 had no DC
+  points to give, presumably the DM99 → R-2 direction:
+  `ff 00 10 00 00 02 00 00 00 00 00 00 00 00 02 00 00 00 00 00 ff`.
+  Its `02` field byte sits at offset 14 rather than 13, which is why the
+  checksum rule leaves that byte out wherever it is.
+
+How DM99 uses the value (disassembly of its `1ST_READ.BIN`, routine around
+`0x8C0F8FB6`, run after a successful transfer):
+
+```
+value  = (byte0 << 8) | byte1           ; 16-bit big-endian; hypothesis: offsets 15-16
+points = ngp_points + value * 40         ; ((v << 2) + v) << 3
+if (points > 3800) points = 3800         ; the 3800 is a cap
+ngp_points = points
+```
+
+| Upload | Value | × 40 | NGP POINTS |
+|---|---|---|---|
+| MOTM | 100 | 4000 | 0 → **3800** (capped) |
+| R-2 | 1 | 40 | 3800 → 3800 (already at the cap) |
+
+DM99 spends these points on its VISUAL galleries (200, 400 and 600 points).
+What MOTM's 100 and R-2's 1 stand for on the NGPC side is still open: MOTM
+had fewer than 40 VS Points at the time, so it is not those.
+
 ## Pitfalls we hit
 
 - **A frame split in two** can stop MOTM mid-read and poison the next
@@ -216,7 +278,10 @@ back. MOTM was never written to tolerate a pause in the middle.
 ## What is still open
 
 - The meaning of the ack's four values and of offsets 13-14 and 19 of the data frame.
-- Why offset 10 is the points plus 7.
+- Offset 13 (`06` for MF2K, `02` for DM99) and the payload bytes other than
+  the points.
+- What MOTM sends to DM99 (100) and R-2 sends (1), on the NGPC side.
+- The DM99 → R-2 direction (points to the handheld), not yet captured.
 - MOTM's other link partners (*King of Fighters: Dream Match 1999* and the
   other games paired with NGPC titles) have not been tried; the guide
   suggests the Dream Match protocol differs.

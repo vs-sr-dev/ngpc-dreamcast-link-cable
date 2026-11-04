@@ -10,6 +10,8 @@ Millennium* (NGPC) and *Capcom vs. SNK: Millennium Fight 2000* (Dreamcast)
 completes its upload over it: the Dreamcast receives the VS Points, and the
 NGPC unlocks the eight secret characters it gives out on the first
 successful link.
+A second pair, *King of Fighters R-2* and MOTM with *The King of Fighters
+Dream Match 1999*, works over the same bridge without changes.
 
 As far as we know, no emulator emulated this cable before. Flycast already
 had a serial "battle cable" over UDP; no NGPC emulator had anything on the
@@ -58,6 +60,7 @@ no game at all.
 | 2. NGPC ↔ NGPC | Two RetroArch instances linked over TCP | ✅ |
 | 3. NGPC ↔ Dreamcast | Homebrew demos on both sides, through the bridge and Flycast's BattleCable | ✅ |
 | Retail | MOTM ↔ MF2K upload completes; VS Points arrive; secret characters unlock | ✅ (needs the bridge's frame coalescing, on by default; see [PROTOCOL.md](docs/PROTOCOL.md#motm-reads-a-frame-until-its-buffer-runs-dry)) |
+| Retail, second pair | MOTM → *KoF Dream Match 1999* and *KoF R-2* → DM99 uploads complete; R-2 works with the core unchanged | ✅ in emulation (DM99 → R-2 not yet captured; see [PROTOCOL.md](docs/PROTOCOL.md#the-king-of-fighters-dream-match-1999)) |
 
 **Emulator only.** Nothing here has run on real hardware. The NGPC demo
 calls the BIOS entry points directly, which works on beetle-ngp's HLE BIOS

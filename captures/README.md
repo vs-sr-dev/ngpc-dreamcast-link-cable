@@ -28,6 +28,17 @@ Two log formats:
 | `live_split_echo_bridge.log`, `live_split_echo_motm.log` | 2026-11-04, first live run after the cleanup, bridge without coalescing, fresh save, 40 points. MF2K gets the points; Flycast splits the data echo after byte 22, MOTM reads 22 of 25 bytes and says "Huh, link broke!". A retry (t≈883 s) fails right after the acknowledgement, because MOTM first reads the 3 leftover bytes. |
 | `live_coalesced_success_bridge.log`, `live_coalesced_success_motm.log` | The same setup, MOTM restarted, bridge with frame coalescing. Flycast splits the ack after byte 22 and the echo after byte 19; the bridge delivers each frame whole (`delivered in one write`); full success with the unlock. These logs use the current names. |
 
+## `dm99/`
+
+*The King of Fighters Dream Match 1999* (Dreamcast, Japan) on 2026-11-04,
+through the bridge with frame coalescing, in Flycast. These logs use the
+current names. See [PROTOCOL.md](../docs/PROTOCOL.md#the-king-of-fighters-dream-match-1999).
+
+| File | What |
+|---|---|
+| `motm_to_dm99_bridge.log`, `motm_to_dm99_motm.log` | MOTM uploads to DM99: two requests while DM99 was not yet on its DOWNLOAD screen, then the full exchange with the 19-byte data frame (value 100, credited as 3800 NGP points: ×40, capped). |
+| `r2_to_dm99_bridge.log`, `r2_to_dm99_r2core.log` | *King of Fighters R-2* uploads from its DC MODE: cable probe `0x91`, the same request and announce as MOTM, a 19-byte data frame with value 1. Later in the bridge log, a 21-byte all-zero exchange from DM99's upload menu opened with no DC points. |
+
 ## `experiments/`
 
 The attempts in between, kept for the record. Most were made with
