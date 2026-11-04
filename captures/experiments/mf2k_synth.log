@@ -1,0 +1,917 @@
+[   0.000] SR3 bridge starting -- pid=34456
+[   0.000] Flycast peer: 127.0.0.1:37391
+[   0.000] SYNTH: MF2K ACK synthesis ENABLED -- reply frame ff001000000000000000001c00000400000c00001000ff delay=100ms
+[   0.001] UDP bind OK on 0.0.0.0:42500 (Flycast should have server=42500)
+[   0.001] TCP listen OK on 0.0.0.0:42424 (beetle-ngp client should connect here)
+[ 119.913] TCP accept from 127.0.0.1:3240 (NGPC peer attached)
+[ 119.982] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.013] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.043] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.082] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.112] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.143] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.183] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.213] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.243] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.283] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.313] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.343] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.382] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.412] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.442] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.483] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.513] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.542] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.583] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.613] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.643] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.682] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.712] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.743] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.782] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.813] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.843] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.882] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.912] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.942] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.982] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.012] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.042] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.083] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.113] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.142] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.182] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.213] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.242] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.282] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.312] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.343] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.383] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.413] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.442] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.483] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.513] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.542] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.582] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.612] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.642] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.683] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.713] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.743] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.782] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.813] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.853] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.883] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.912] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.952] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.982] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.012] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.053] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.083] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.113] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.153] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.183] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.213] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.253] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.283] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.312] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.353] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.383] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.412] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.453] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.482] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.513] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.553] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.582] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.613] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.652] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.683] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.713] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.753] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.782] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.813] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.852] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.883] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.913] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.953] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.983] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.012] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.053] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.083] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.113] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.152] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.182] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.213] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.253] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.283] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.313] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.353] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.382] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.413] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.453] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.483] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.512] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.553] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.583] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.613] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.653] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.682] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.713] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.753] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.782] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.813] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.853] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.883] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.913] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.953] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.983] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.013] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.053] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.082] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.113] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.153] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.183] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.213] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.252] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.282] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.313] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.353] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.382] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.412] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 137.093] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 137.093] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.093] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 137.093]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 137.194]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 137.194] Flycast peer seen from 127.0.0.1:37391
+[ 137.194] UDP<-Flycast 'D' ff
+[ 137.194] UDP<-Flycast 'D' 00
+[ 137.194] UDP<-Flycast 'D' 10
+[ 137.194] UDP<-Flycast 'D' 00
+[ 137.194] UDP<-Flycast 'D' 00
+[ 137.194] UDP<-Flycast 'D' 00
+[ 137.194] UDP<-Flycast 'D' 00
+[ 137.203] UDP<-Flycast 'D' 00
+[ 137.203] UDP<-Flycast 'D' 00
+[ 137.203] UDP<-Flycast 'D' 00
+[ 137.204] UDP<-Flycast 'D' 00
+[ 137.204] UDP<-Flycast 'D' 1c
+[ 137.204] UDP<-Flycast 'D' 00
+[ 137.204] UDP<-Flycast 'D' 00
+[ 137.205] UDP<-Flycast 'D' 04
+[ 137.205] UDP<-Flycast 'D' 00
+[ 137.206] UDP<-Flycast 'D' 00
+[ 137.206] UDP<-Flycast 'D' 0c
+[ 137.207] UDP<-Flycast 'D' 00
+[ 137.207] UDP<-Flycast 'D' 00
+[ 137.207] UDP<-Flycast 'D' 10
+[ 137.207] UDP<-Flycast 'D' 00
+[ 137.223] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 137.223] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.223] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 137.223] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 137.223] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 137.224] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 137.224] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.224] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 137.224]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 137.232] UDP<-Flycast 'D' ff
+[ 137.306] UDP<-Flycast 'D' ff
+[ 137.306] UDP<-Flycast 'D' 00
+[ 137.306] UDP<-Flycast 'D' 10
+[ 137.307] UDP<-Flycast 'D' 00
+[ 137.307] UDP<-Flycast 'D' 00
+[ 137.307] UDP<-Flycast 'D' 01
+[ 137.308] UDP<-Flycast 'D' 00
+[ 137.336] UDP<-Flycast 'D' 00
+[ 137.337] UDP<-Flycast 'D' 00
+[ 137.337] UDP<-Flycast 'D' 00
+[ 137.337] UDP<-Flycast 'D' 01
+[ 137.337] UDP<-Flycast 'D' 00
+[ 137.338] UDP<-Flycast 'D' 00
+[ 137.338] UDP<-Flycast 'D' 01
+[ 137.338] UDP<-Flycast 'D' 01
+[ 137.338] UDP<-Flycast 'D' 00
+[ 137.339] UDP<-Flycast 'D' ff
+[ 151.094] TCP recv error: [WinError 10054] Connessione in corso interrotta forzatamente dall'host remoto
+[ 151.095] TCP peer ('127.0.0.1', 3240) disconnected
+[ 199.338] TCP accept from 127.0.0.1:40327 (NGPC peer attached)
+[ 295.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.247] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.276] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.307] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.347] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.377] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.407] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.447] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.477] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.508] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.547] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.577] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.607] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.647] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.677] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.707] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.747] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.777] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.806] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.847] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.877] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.907] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.948] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 295.977] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.007] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.047] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.078] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.107] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.146] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.177] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.247] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.277] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 296.307] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 305.547] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 305.547] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.547] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 305.547]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 305.648]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 305.648] UDP<-Flycast 'D' ff
+[ 305.648] UDP<-Flycast 'D' 00
+[ 305.648] UDP<-Flycast 'D' 10
+[ 305.648] UDP<-Flycast 'D' 00
+[ 305.648] UDP<-Flycast 'D' 00
+[ 305.648] UDP<-Flycast 'D' 00
+[ 305.648] UDP<-Flycast 'D' 00
+[ 305.651] UDP<-Flycast 'D' 00
+[ 305.651] UDP<-Flycast 'D' 00
+[ 305.651] UDP<-Flycast 'D' 00
+[ 305.652] UDP<-Flycast 'D' 00
+[ 305.652] UDP<-Flycast 'D' 1c
+[ 305.652] UDP<-Flycast 'D' 00
+[ 305.652] UDP<-Flycast 'D' 00
+[ 305.653] UDP<-Flycast 'D' 04
+[ 305.653] UDP<-Flycast 'D' 00
+[ 305.654] UDP<-Flycast 'D' 00
+[ 305.654] UDP<-Flycast 'D' 0c
+[ 305.656] UDP<-Flycast 'D' 00
+[ 305.657] UDP<-Flycast 'D' 00
+[ 305.657] UDP<-Flycast 'D' 10
+[ 305.657] UDP<-Flycast 'D' 00
+[ 305.657] UDP<-Flycast 'D' ff
+[ 305.687] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 305.688] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 305.688] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 305.688] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 305.688] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 305.688] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 305.689]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 305.786] UDP<-Flycast 'D' ff
+[ 305.786] UDP<-Flycast 'D' 00
+[ 305.786] UDP<-Flycast 'D' 10
+[ 305.786] UDP<-Flycast 'D' 00
+[ 305.787] UDP<-Flycast 'D' 00
+[ 305.797] UDP<-Flycast 'D' 01
+[ 305.797] UDP<-Flycast 'D' 00
+[ 305.817] UDP<-Flycast 'D' 00
+[ 305.818] UDP<-Flycast 'D' 00
+[ 305.818] UDP<-Flycast 'D' 00
+[ 305.818] UDP<-Flycast 'D' 01
+[ 305.818] UDP<-Flycast 'D' 00
+[ 305.818] UDP<-Flycast 'D' 00
+[ 305.819] UDP<-Flycast 'D' 01
+[ 305.819] UDP<-Flycast 'D' 01
+[ 305.819] UDP<-Flycast 'D' 00
+[ 305.820] UDP<-Flycast 'D' ff
+[ 318.030] TCP recv error: [WinError 10054] Connessione in corso interrotta forzatamente dall'host remoto
+[ 318.030] TCP peer ('127.0.0.1', 40327) disconnected
+[ 341.004] TCP accept from 127.0.0.1:14472 (NGPC peer attached)
+[ 785.297] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.327] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.398] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.427] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.466] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.497] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.527] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.566] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.597] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.627] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.666] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.697] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.727] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.767] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.796] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.827] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.867] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.927] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.966] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 785.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.027] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.067] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.096] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.137] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.167] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.197] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.237] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.267] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.297] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.337] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.397] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.436] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.466] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.496] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.536] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.566] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.598] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.636] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.667] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.697] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.737] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.767] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.797] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.867] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.937] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.967] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 786.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.037] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.067] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.096] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.136] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.166] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.196] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.236] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.266] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.296] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.337] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.398] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.437] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.466] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.497] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.537] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.566] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.597] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.637] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.667] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.697] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.737] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.767] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.797] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.867] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.936] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.967] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 787.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.037] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.066] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.097] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.137] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.167] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.197] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.237] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.267] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.297] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.337] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.397] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.437] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.467] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.497] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.537] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.567] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.597] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.637] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.667] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.697] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.737] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.767] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.797] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.867] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.936] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.967] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 788.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.036] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.066] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.097] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.136] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.167] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.196] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.236] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.267] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.297] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.336] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.397] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.437] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.467] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.497] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.537] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.567] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.597] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.637] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.667] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.698] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.737] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.767] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.797] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 789.867] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 813.027] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 813.027] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.027] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 813.028] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.029] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.029] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.029] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.029] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.029] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.029] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 813.029]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 813.130]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 813.130] UDP<-Flycast 'D' ff
+[ 813.130] UDP<-Flycast 'D' 00
+[ 813.130] UDP<-Flycast 'D' 10
+[ 813.130] UDP<-Flycast 'D' 00
+[ 813.130] UDP<-Flycast 'D' 00
+[ 813.130] UDP<-Flycast 'D' 00
+[ 813.130] UDP<-Flycast 'D' 00
+[ 813.145] UDP<-Flycast 'D' 00
+[ 813.145] UDP<-Flycast 'D' 00
+[ 813.146] UDP<-Flycast 'D' 00
+[ 813.146] UDP<-Flycast 'D' 00
+[ 813.146] UDP<-Flycast 'D' 1c
+[ 813.146] UDP<-Flycast 'D' 00
+[ 813.146] UDP<-Flycast 'D' 00
+[ 813.147] UDP<-Flycast 'D' 04
+[ 813.147] UDP<-Flycast 'D' 00
+[ 813.148] UDP<-Flycast 'D' 00
+[ 813.148] UDP<-Flycast 'D' 0c
+[ 813.148] UDP<-Flycast 'D' 00
+[ 813.148] UDP<-Flycast 'D' 00
+[ 813.148] UDP<-Flycast 'D' 10
+[ 813.148] UDP<-Flycast 'D' 00
+[ 813.149] UDP<-Flycast 'D' ff
+[ 813.157] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 813.157] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 813.157] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.157] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 813.157] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 813.158] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 813.158] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 813.158]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 813.245] UDP<-Flycast 'D' ff
+[ 813.246] UDP<-Flycast 'D' 00
+[ 813.246] UDP<-Flycast 'D' 10
+[ 813.246] UDP<-Flycast 'D' 00
+[ 813.246] UDP<-Flycast 'D' 00
+[ 813.246] UDP<-Flycast 'D' 01
+[ 813.247] UDP<-Flycast 'D' 00
+[ 813.277] UDP<-Flycast 'D' 00
+[ 813.277] UDP<-Flycast 'D' 00
+[ 813.278] UDP<-Flycast 'D' 00
+[ 813.278] UDP<-Flycast 'D' 01
+[ 813.278] UDP<-Flycast 'D' 00
+[ 813.279] UDP<-Flycast 'D' 00
+[ 813.279] UDP<-Flycast 'D' 01
+[ 813.279] UDP<-Flycast 'D' 01
+[ 813.279] UDP<-Flycast 'D' 00
+[ 813.280] UDP<-Flycast 'D' ff
+[ 827.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 827.866] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 827.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 827.937] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 827.967] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 827.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.036] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.067] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.097] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.137] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.167] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.197] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.237] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.267] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.297] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.337] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.397] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.437] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 828.466] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 832.767] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 832.767] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.767] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 832.767] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 832.767] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.768] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 832.768]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 832.868]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 832.898] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 832.898] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 832.898] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 832.898] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 832.898] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 832.898] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 832.898]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 838.317] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.357] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.387] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.417] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.457] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.486] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.517] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.557] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.587] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.617] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.657] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.687] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.716] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.756] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.787] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.816] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.857] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.887] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 838.917] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 863.547] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 863.547] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.547] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.548] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.548] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.548] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.548] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 863.548]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 863.648]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 863.678] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 863.678] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.678] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 863.678] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 863.678] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 863.678] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.678] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.678] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.678] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.679] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 863.679] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.679] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.679] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 863.679] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 863.679] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 863.679] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 863.679]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 891.107] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.137] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.167] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.237] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.267] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.307] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.337] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.367] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.406] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.437] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.466] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.508] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.537] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.566] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 891.607] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 912.047] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 912.047] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.047] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 912.048] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.048] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 912.048]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 912.148]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 912.148] UDP<-Flycast 'D' ff
+[ 912.148] UDP<-Flycast 'D' 00
+[ 912.148] UDP<-Flycast 'D' 10
+[ 912.149] UDP<-Flycast 'D' 00
+[ 912.149] UDP<-Flycast 'D' 00
+[ 912.149] UDP<-Flycast 'D' 00
+[ 912.149] UDP<-Flycast 'D' 00
+[ 912.159] UDP<-Flycast 'D' 00
+[ 912.160] UDP<-Flycast 'D' 00
+[ 912.160] UDP<-Flycast 'D' 00
+[ 912.160] UDP<-Flycast 'D' 00
+[ 912.160] UDP<-Flycast 'D' 1c
+[ 912.161] UDP<-Flycast 'D' 00
+[ 912.161] UDP<-Flycast 'D' 00
+[ 912.161] UDP<-Flycast 'D' 04
+[ 912.161] UDP<-Flycast 'D' 00
+[ 912.162] UDP<-Flycast 'D' 00
+[ 912.162] UDP<-Flycast 'D' 0c
+[ 912.163] UDP<-Flycast 'D' 00
+[ 912.163] UDP<-Flycast 'D' 00
+[ 912.163] UDP<-Flycast 'D' 10
+[ 912.163] UDP<-Flycast 'D' 00
+[ 912.163] UDP<-Flycast 'D' ff
+[ 912.177] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 912.177] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 912.177] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 912.177] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 912.177] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 912.177] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 912.177]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 912.261] UDP<-Flycast 'D' ff
+[ 912.261] UDP<-Flycast 'D' 00
+[ 912.262] UDP<-Flycast 'D' 10
+[ 912.262] UDP<-Flycast 'D' 00
+[ 912.262] UDP<-Flycast 'D' 00
+[ 912.262] UDP<-Flycast 'D' 01
+[ 912.262] UDP<-Flycast 'D' 00
+[ 912.293] UDP<-Flycast 'D' 00
+[ 912.293] UDP<-Flycast 'D' 00
+[ 912.293] UDP<-Flycast 'D' 00
+[ 912.293] UDP<-Flycast 'D' 01
+[ 912.294] UDP<-Flycast 'D' 00
+[ 912.294] UDP<-Flycast 'D' 00
+[ 912.294] UDP<-Flycast 'D' 01
+[ 912.294] UDP<-Flycast 'D' 01
+[ 912.294] UDP<-Flycast 'D' 00
+[ 912.295] UDP<-Flycast 'D' ff
+[ 940.697] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.727] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.757] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.797] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.827] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.857] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.927] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.957] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 940.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.027] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.057] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.097] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.127] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.157] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.196] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.227] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.257] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.297] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.328] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.357] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.397] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.427] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.457] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.498] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.527] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.557] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.597] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.627] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.657] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.698] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.728] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.757] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.796] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.827] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.857] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.897] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.927] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.967] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 941.997] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1067.938] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1067.978] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.008] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.037] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.077] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.107] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.137] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.177] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.237] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.276] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.307] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.337] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.377] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.407] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.437] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.476] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.507] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.536] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.577] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.607] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.637] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.677] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.707] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.737] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.777] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.807] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.877] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.907] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.936] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1068.977] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.007] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.037] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.077] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.107] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.137] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.177] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.248] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.277] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.307] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.348] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.377] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.407] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.447] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.477] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.507] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.547] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.577] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.607] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.646] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.677] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.706] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.747] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.777] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.808] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.847] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.877] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.907] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.947] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1069.976] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.007] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.047] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.076] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.107] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.147] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.177] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.247] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.277] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.307] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.347] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.377] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.407] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.447] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.477] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.507] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.547] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.577] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.607] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.647] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.677] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.707] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.747] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.777] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.807] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.847] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.877] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.908] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.947] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1070.977] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.007] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.047] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.077] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.107] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.147] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.177] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.207] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.247] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.277] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.308] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.347] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.377] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.407] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.447] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.477] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.506] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.546] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.577] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.607] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.647] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.677] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.707] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.747] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.777] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.807] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.847] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.876] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.907] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[1071.946] TCP<-NGPC 92 -> UDP->Flycast 'D' 92

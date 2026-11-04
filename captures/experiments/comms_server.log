@@ -1,0 +1,16 @@
+[SR3 COMMS] log opened role=server
+mode=server listening on :42424 (non-blocking accept)
+server: peer attached
+send 0x42
+send 0x42
+send 0x42
+send 0x42
+send 0x42
+recv -> 0x42
+recv -> 0x42
+recv -> 0x42
+recv -> 0x42
+recv -> 0x42
+send 0x42
+send 0x42
+recv err=10054, dropping peer

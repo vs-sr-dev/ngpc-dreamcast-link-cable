@@ -1,0 +1,122 @@
+[SR3 COMMS] log opened role=loop
+mode=loopback (SR3_LINK_ROLE unset)
+write 0x92 (head=1 tail=0)
+read -> 0x92
+write 0x92 (head=2 tail=1)
+write 0x00 (head=3 tail=1)
+read -> 0x92
+read -> 0x00
+write 0x00 (head=4 tail=3)
+read -> 0x00
+write 0x00 (head=5 tail=4)
+read -> 0x00
+write 0x00 (head=6 tail=5)
+read -> 0x00
+write 0x00 (head=7 tail=6)
+read -> 0x00
+write 0x00 (head=8 tail=7)
+read -> 0x00
+write 0x08 (head=9 tail=8)
+read -> 0x08
+write 0x08 (head=10 tail=9)
+read -> 0x08
+write 0x00 (head=11 tail=10)
+read -> 0x00
+write 0x00 (head=12 tail=11)
+read -> 0x00
+write 0x00 (head=13 tail=12)
+read -> 0x00
+write 0x02 (head=14 tail=13)
+read -> 0x02
+write 0x02 (head=15 tail=14)
+read -> 0x02
+write 0x02 (head=16 tail=15)
+read -> 0x02
+write 0x00 (head=17 tail=16)
+read -> 0x00
+write 0x00 (head=18 tail=17)
+read -> 0x00
+write 0x00 (head=19 tail=18)
+read -> 0x00
+write 0x00 (head=20 tail=19)
+read -> 0x00
+write 0x00 (head=21 tail=20)
+read -> 0x00
+write 0x00 (head=22 tail=21)
+read -> 0x00
+write 0x00 (head=23 tail=22)
+read -> 0x00
+write 0x00 (head=24 tail=23)
+read -> 0x00
+write 0x00 (head=25 tail=24)
+read -> 0x00
+write 0x00 (head=26 tail=25)
+read -> 0x00
+write 0x00 (head=27 tail=26)
+read -> 0x00
+write 0x00 (head=28 tail=27)
+read -> 0x00
+write 0x00 (head=29 tail=28)
+read -> 0x00
+write 0x00 (head=30 tail=29)
+read -> 0x00
+write 0x00 (head=31 tail=30)
+read -> 0x00
+write 0x00 (head=32 tail=31)
+read -> 0x00
+write 0x00 (head=33 tail=32)
+read -> 0x00
+write 0x00 (head=34 tail=33)
+read -> 0x00
+write 0x00 (head=35 tail=34)
+read -> 0x00
+write 0x00 (head=36 tail=35)
+read -> 0x00
+write 0x00 (head=37 tail=36)
+read -> 0x00
+write 0x10 (head=38 tail=37)
+read -> 0x10
+write 0x10 (head=39 tail=38)
+read -> 0x10
+write 0x10 (head=40 tail=39)
+read -> 0x10
+write 0x00 (head=41 tail=40)
+read -> 0x00
+read -> empty
+read -> empty
+write 0xff (head=42 tail=41)
+write 0x00 (head=43 tail=41)
+write 0x31 (head=44 tail=41)
+write 0x31 (head=45 tail=41)
+write 0x00 (head=46 tail=41)
+write 0x00 (head=47 tail=41)
+write 0x00 (head=48 tail=41)
+write 0x00 (head=49 tail=41)
+write 0x00 (head=50 tail=41)
+write 0x00 (head=51 tail=41)
+write 0x00 (head=52 tail=41)
+write 0x00 (head=53 tail=41)
+write 0x00 (head=54 tail=41)
+write 0x00 (head=55 tail=41)
+write 0x00 (head=56 tail=41)
+write 0x00 (head=57 tail=41)
+write 0x00 (head=58 tail=41)
+write 0xff (head=59 tail=41)
+read -> 0xff
+read -> 0x00
+read -> 0x31
+read -> 0x31
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0x00
+read -> 0xff

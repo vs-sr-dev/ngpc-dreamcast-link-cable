@@ -1,0 +1,44 @@
+# Build output (core clone, DLL)
+build/
+
+# Local paths and logs
+launchers/config.bat
+logs/
+*.log
+!captures/**/*.log
+
+# BYOA: never commit game data, BIOS or saves
+*.ngc
+*.ngp
+*.npc
+*.cue
+*.bin
+*.gdi
+*.cdi
+*.chd
+*.iso
+*.srm
+*.rom
+
+# NGPC demo: SDK files fetched from ngpc-project-template, and build products
+homebrew/ngpc_hello_link/library.c
+homebrew/ngpc_hello_link/library.h
+homebrew/ngpc_hello_link/library.inc
+homebrew/ngpc_hello_link/ngpc.h
+homebrew/ngpc_hello_link/ngpc.lcf
+homebrew/ngpc_hello_link/system.lib
+homebrew/ngpc_hello_link/carthdr.h
+homebrew/ngpc_hello_link/colors.h
+homebrew/ngpc_hello_link/bin/
+*.rel
+*.abs
+*.s24
+*.map
+
+# Dreamcast demo build products
+*.o
+*.elf
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,406 @@
+diff --git a/Makefile b/Makefile
+index e400288..d76dd2a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -573,7 +573,7 @@ else
+    CC ?= gcc
+    CXX ?= g++
+    SHARED := -shared -Wl,--no-undefined -Wl,--version-script=link.T
+-   LDFLAGS += -static-libgcc -static-libstdc++ -lwinmm
++   LDFLAGS += -static-libgcc -static-libstdc++ -lwinmm -lws2_32
+ endif
+ 
+ include Makefile.common
+diff --git a/mednafen/ngp/system.c b/mednafen/ngp/system.c
+index 6ebfb2f..0ef32d0 100644
+--- a/mednafen/ngp/system.c
++++ b/mednafen/ngp/system.c
+@@ -1,18 +1,385 @@
+ #include <stdint.h>
+ #include <stdlib.h>
++#include <stdio.h>
+ #include <string.h>
++
++#ifdef _WIN32
++/* TCP socket backend. winsock2.h MUST come before windows.h. */
++#include <winsock2.h>
++#include <ws2tcpip.h>
++#endif
++
+ #include "flash.h"
+ #include "system.h"
+ #include "rom.h"
++#include "mem.h"
+ 
+ #include "../general.h"
+ #include "../state.h"
+ 
+ #include <streams/file_stream.h>
+ 
+-bool system_comms_read(uint8_t* buffer) { return 0; }
+-bool system_comms_poll(uint8_t* buffer) { return 0; }
+-void system_comms_write(uint8_t data) { }
++/* Homebrew side-channel: we mirror the comms status/byte into a fixed NGPC RAM
++ * address so the ROM can read it directly without fighting cc900's register
++ * naming. Work RAM is 0x004000-0x006BFF; we claim the top bytes.
++ *
++ * CRITICAL: this is for HOMEBREW ROMS ONLY (the hello_link demo).
++ * Retail ROMs (MOTM etc) use all of work RAM for their own state; stomping
++ * 0x6BFC/0x6BFD corrupts game state and causes MOTM to hang/reset in VS
++ * menu. Gated behind env var NGPC_LINK_MMIO=1 (default off = stock behavior). */
++#define LINK_MMIO_STATUS 0x006BFC  /* 1 = empty, 0 = got byte */
++#define LINK_MMIO_BYTE   0x006BFD  /* last received byte */
++static int link_mmio_enabled = 0;  /* toggled in link_init via env var */
++#define LINK_MMIO_STORE_STATUS(v) do { if (link_mmio_enabled) storeB(LINK_MMIO_STATUS, (v)); } while(0)
++#define LINK_MMIO_STORE_BYTE(v)   do { if (link_mmio_enabled) storeB(LINK_MMIO_BYTE,   (v)); } while(0)
++
++/* NGPC link-cable hook.
++ * Ring 1: in-process ring-buffer loopback (role unset).
++ * Ring 2: TCP socket between two RetroArch instances (role=server|client).
++ * Ring 3: TCP client to bridge/bridge.py, which speaks Flycast's BattleCable UDP.
++ *
++ * Backend selection at first call:
++ *   NGPC_LINK_ROLE=server -> bind/listen/accept on NGPC_LINK_PORT (default 42424)
++ *   NGPC_LINK_ROLE=client -> connect to NGPC_LINK_HOST:NGPC_LINK_PORT
++ *   NGPC_LINK_ROLE=null   -> no backend, log only (behaves like the stock core)
++ *   otherwise             -> ring-buffer loopback (Ring 1 regression path)
++ *
++ * Contract (system.h): read/poll return FALSE if empty; if buffer=NULL,
++ * status only (no dequeue). */
++#define LINK_COMMS_CAP 64
++static uint8_t  link_comms_buf[LINK_COMMS_CAP];
++static uint32_t link_comms_head = 0;
++static uint32_t link_comms_tail = 0;
++
++enum { LINK_MODE_LOOPBACK = 0, LINK_MODE_SERVER = 1, LINK_MODE_CLIENT = 2, LINK_MODE_NULL = 3 };
++static int link_mode = -1; /* -1 = not yet initialised */
++static char link_role_tag[16] = "loop";
++
++#ifdef _WIN32
++static SOCKET link_listen_sock = INVALID_SOCKET;
++static SOCKET link_peer_sock   = INVALID_SOCKET;
++static int    link_wsa_ready   = 0;
++
++/* Client: peer address (resolved once) and the connect() in flight, if any. */
++#define LINK_RECONNECT_INTERVAL_MS 1000
++static SOCKET                  link_connecting_sock  = INVALID_SOCKET;
++static struct sockaddr_storage link_peer_addr;
++static int                     link_peer_addrlen     = 0;
++static ULONGLONG               link_next_connect_ms  = 0;
++static int                     link_connect_failures = 0;
++#endif
++
++/* Windows/RetroArch silently drops stderr from core DLLs -- log to a file
++ * we can tail externally. Opt-in: set NGPC_LINK_LOG_DIR to a directory and
++ * every comms call is written to <dir>/ngpc_link_<role>.log, unbuffered.
++ * Log path is split by role so two concurrent instances don't race. */
++static FILE* link_comms_log(void) {
++   static FILE* fp = NULL;
++   static int tried = 0;
++   if (!fp && !tried) {
++      const char* dir = getenv("NGPC_LINK_LOG_DIR");
++      char path[512];
++      tried = 1;
++      if (!dir || !*dir) return NULL;
++      snprintf(path, sizeof path, "%s/ngpc_link_%s.log", dir, link_role_tag);
++      fp = fopen(path, "w");
++      if (fp) {
++         setvbuf(fp, NULL, _IONBF, 0);
++         fprintf(fp, "[NGPC LINK] log opened role=%s\n", link_role_tag);
++      }
++   }
++   return fp;
++}
++#define LINK_LOG(...) do { FILE* f = link_comms_log(); if (f) fprintf(f, __VA_ARGS__); } while(0)
++
++#ifdef _WIN32
++static void link_set_nonblocking(SOCKET s) {
++   u_long nb = 1;
++   ioctlsocket(s, FIONBIO, &nb);
++}
++
++static void link_init_win32(void) {
++   const char* role = getenv("NGPC_LINK_ROLE");
++   const char* host = getenv("NGPC_LINK_HOST");
++   const char* port = getenv("NGPC_LINK_PORT");
++   const char* mmio = getenv("NGPC_LINK_MMIO");
++   if (!host || !*host) host = "127.0.0.1";
++   if (!port || !*port) port = "42424";
++   link_mmio_enabled = (mmio && *mmio == '1') ? 1 : 0;
++
++   if (role && strcmp(role, "null") == 0) {
++      link_mode = LINK_MODE_NULL;
++      snprintf(link_role_tag, sizeof link_role_tag, "null");
++      LINK_LOG("mode=null (log-only, no backend, mimics stock core behavior), mmio=%d\n", link_mmio_enabled);
++      return;
++   }
++   if (!role || (strcmp(role, "server") != 0 && strcmp(role, "client") != 0)) {
++      link_mode = LINK_MODE_LOOPBACK;
++      snprintf(link_role_tag, sizeof link_role_tag, "loop");
++      LINK_LOG("mode=loopback (NGPC_LINK_ROLE unset)\n");
++      return;
++   }
++
++   snprintf(link_role_tag, sizeof link_role_tag, "%s", role);
++
++   if (!link_wsa_ready) {
++      WSADATA wsa;
++      if (WSAStartup(MAKEWORD(2,2), &wsa) != 0) {
++         LINK_LOG("WSAStartup failed, falling back to loopback\n");
++         link_mode = LINK_MODE_LOOPBACK;
++         return;
++      }
++      link_wsa_ready = 1;
++   }
++
++   struct addrinfo hints, *res = NULL;
++   memset(&hints, 0, sizeof hints);
++   hints.ai_family   = AF_INET;
++   hints.ai_socktype = SOCK_STREAM;
++   hints.ai_protocol = IPPROTO_TCP;
++
++   if (strcmp(role, "server") == 0) {
++      hints.ai_flags = AI_PASSIVE;
++      if (getaddrinfo(NULL, port, &hints, &res) != 0) {
++         LINK_LOG("server: getaddrinfo failed\n");
++         link_mode = LINK_MODE_LOOPBACK; return;
++      }
++      link_listen_sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
++      int opt = 1;
++      setsockopt(link_listen_sock, SOL_SOCKET, SO_REUSEADDR, (const char*)&opt, sizeof opt);
++      if (bind(link_listen_sock, res->ai_addr, (int)res->ai_addrlen) != 0) {
++         LINK_LOG("server: bind failed err=%d\n", WSAGetLastError());
++         freeaddrinfo(res);
++         closesocket(link_listen_sock); link_listen_sock = INVALID_SOCKET;
++         link_mode = LINK_MODE_LOOPBACK; return;
++      }
++      listen(link_listen_sock, 1);
++      link_set_nonblocking(link_listen_sock);
++      freeaddrinfo(res);
++      link_mode = LINK_MODE_SERVER;
++      LINK_LOG("mode=server listening on :%s (non-blocking accept)\n", port);
++   } else {
++      if (getaddrinfo(host, port, &hints, &res) != 0) {
++         LINK_LOG("client: getaddrinfo failed\n");
++         link_mode = LINK_MODE_LOOPBACK; return;
++      }
++      memcpy(&link_peer_addr, res->ai_addr, res->ai_addrlen);
++      link_peer_addrlen = (int)res->ai_addrlen;
++      freeaddrinfo(res);
++      link_mode = LINK_MODE_CLIENT;
++      LINK_LOG("mode=client, peer %s:%s (non-blocking connect)\n", host, port);
++   }
++}
++
++/* Accept once per frame on server side if peer not yet attached. */
++static void link_accept_pending(void) {
++   if (link_mode != LINK_MODE_SERVER || link_peer_sock != INVALID_SOCKET) return;
++   if (link_listen_sock == INVALID_SOCKET) return;
++   SOCKET s = accept(link_listen_sock, NULL, NULL);
++   if (s != INVALID_SOCKET) {
++      link_set_nonblocking(s);
++      link_peer_sock = s;
++      LINK_LOG("server: peer attached\n");
++   }
++}
++
++/* Client-side lazy (re)connect. Must never block: it runs on every comms
++ * call, several times per frame, and on Windows a blocking connect() to a
++ * closed port takes ~2 s (SYN retries) -- which froze RetroArch whenever
++ * the bridge was not up yet or went away. So the connect is started
++ * non-blocking, its completion is polled with a zero-timeout select(), and
++ * a new attempt starts at most once per LINK_RECONNECT_INTERVAL_MS. */
++static void link_client_reconnect(void) {
++   if (link_mode != LINK_MODE_CLIENT || link_peer_sock != INVALID_SOCKET) return;
++
++   if (link_connecting_sock != INVALID_SOCKET) {
++      fd_set wfds, efds;
++      struct timeval tv = { 0, 0 };
++      int err = 0, len = sizeof err;
++      FD_ZERO(&wfds); FD_ZERO(&efds);
++      FD_SET(link_connecting_sock, &wfds);
++      FD_SET(link_connecting_sock, &efds);
++      if (select(0, NULL, &wfds, &efds, &tv) <= 0) return; /* still in flight */
++      if (FD_ISSET(link_connecting_sock, &wfds)) {
++         link_peer_sock = link_connecting_sock;
++         link_connecting_sock = INVALID_SOCKET;
++         link_connect_failures = 0;
++         LINK_LOG("client: connected\n");
++         return;
++      }
++      getsockopt(link_connecting_sock, SOL_SOCKET, SO_ERROR, (char*)&err, &len);
++      if (link_connect_failures++ == 0)
++         LINK_LOG("client: connect failed err=%d (retrying every %d ms, not logged again)\n",
++                  err, LINK_RECONNECT_INTERVAL_MS);
++      closesocket(link_connecting_sock);
++      link_connecting_sock = INVALID_SOCKET;
++      return;
++   }
++
++   ULONGLONG now = GetTickCount64();
++   if (now < link_next_connect_ms) return;
++   link_next_connect_ms = now + LINK_RECONNECT_INTERVAL_MS;
++
++   SOCKET s = socket(link_peer_addr.ss_family, SOCK_STREAM, IPPROTO_TCP);
++   if (s == INVALID_SOCKET) return;
++   link_set_nonblocking(s);
++   if (connect(s, (struct sockaddr*)&link_peer_addr, link_peer_addrlen) == 0) {
++      link_peer_sock = s;
++      link_connect_failures = 0;
++      LINK_LOG("client: connected\n");
++   } else if (WSAGetLastError() == WSAEWOULDBLOCK) {
++      link_connecting_sock = s;
++   } else {
++      closesocket(s);
++   }
++}
++#endif
++
++static void link_init(void) {
++   if (link_mode >= 0) return;
++#ifdef _WIN32
++   link_init_win32();
++#else
++   link_mode = LINK_MODE_LOOPBACK;
++#endif
++}
++
++bool system_comms_read(uint8_t* buffer) {
++   link_init();
++   if (link_mode == LINK_MODE_NULL) {
++      LINK_LOG(buffer ? "read (null) -> empty\n" : "read(status, null) -> 0\n");
++      LINK_MMIO_STORE_STATUS(1);
++      return 0;
++   }
++#ifdef _WIN32
++   if (link_mode == LINK_MODE_SERVER) link_accept_pending();
++   if (link_mode == LINK_MODE_CLIENT) link_client_reconnect();
++
++   if (link_mode == LINK_MODE_SERVER || link_mode == LINK_MODE_CLIENT) {
++      if (link_peer_sock == INVALID_SOCKET) {
++         LINK_MMIO_STORE_STATUS(1);
++         return 0;
++      }
++      uint8_t b;
++      /* Non-destructive status check when buffer==NULL (used by
++       * VECT_COMRECIVESTATUS which asks "how many bytes available"
++       * and must NOT consume -- otherwise the following VECT_COMGETDATA
++       * finds the buffer empty and MOTM loops forever polling). */
++      int flags = buffer ? 0 : MSG_PEEK;
++      int n = recv(link_peer_sock, (char*)&b, 1, flags);
++      if (n == 1) {
++         if (buffer) *buffer = b;
++         LINK_MMIO_STORE_STATUS(0);
++         LINK_MMIO_STORE_BYTE(b);
++         LINK_LOG(buffer ? "recv -> 0x%02x\n" : "peek -> 0x%02x\n", b);
++         return 1;
++      }
++      if (n == 0) {
++         LINK_LOG("recv: peer closed\n");
++         closesocket(link_peer_sock); link_peer_sock = INVALID_SOCKET;
++      } else {
++         int err = WSAGetLastError();
++         if (err != WSAEWOULDBLOCK) {
++            LINK_LOG("recv err=%d, dropping peer\n", err);
++            closesocket(link_peer_sock); link_peer_sock = INVALID_SOCKET;
++         }
++      }
++      LINK_MMIO_STORE_STATUS(1);
++      return 0;
++   }
++#endif
++   /* loopback */
++   if (link_comms_head == link_comms_tail) {
++      LINK_LOG("read -> empty\n");
++      LINK_MMIO_STORE_STATUS(1);
++      return 0;
++   }
++   if (buffer) {
++      *buffer = link_comms_buf[link_comms_tail & (LINK_COMMS_CAP - 1)];
++      link_comms_tail++;
++      LINK_LOG("read -> 0x%02x\n", *buffer);
++      LINK_MMIO_STORE_STATUS(0);
++      LINK_MMIO_STORE_BYTE(*buffer);
++   } else {
++      LINK_LOG("read(status) -> 1\n");
++   }
++   return 1;
++}
++
++bool system_comms_poll(uint8_t* buffer) {
++   link_init();
++   if (link_mode == LINK_MODE_NULL) {
++      return 0;
++   }
++#ifdef _WIN32
++   if (link_mode == LINK_MODE_SERVER || link_mode == LINK_MODE_CLIENT) {
++      if (link_peer_sock == INVALID_SOCKET) return 0;
++      uint8_t b;
++      int n = recv(link_peer_sock, (char*)&b, 1, MSG_PEEK);
++      if (n == 1) { if (buffer) *buffer = b; return 1; }
++      return 0;
++   }
++#endif
++   if (link_comms_head == link_comms_tail) return 0;
++   if (buffer) *buffer = link_comms_buf[link_comms_tail & (LINK_COMMS_CAP - 1)];
++   return 1;
++}
++
++void system_comms_write(uint8_t data) {
++   link_init();
++   if (link_mode == LINK_MODE_NULL) {
++      LINK_LOG("write 0x%02x (null, dropped)\n", data);
++      return;
++   }
++#ifdef _WIN32
++   if (link_mode == LINK_MODE_SERVER) link_accept_pending();
++   if (link_mode == LINK_MODE_CLIENT) link_client_reconnect();
++
++   if (link_mode == LINK_MODE_SERVER || link_mode == LINK_MODE_CLIENT) {
++      if (link_peer_sock == INVALID_SOCKET) {
++         LINK_LOG("send 0x%02x dropped (no peer)\n", data);
++         return;
++      }
++      int n = send(link_peer_sock, (const char*)&data, 1, 0);
++      if (n != 1) {
++         int err = WSAGetLastError();
++         LINK_LOG("send 0x%02x failed err=%d\n", data, err);
++         if (err != WSAEWOULDBLOCK) {
++            closesocket(link_peer_sock); link_peer_sock = INVALID_SOCKET;
++         }
++      } else {
++         /* RE instrumentation: on every frame delimiter, dump the MOTM link
++          * state-machine RAM cells (see docs/PROTOCOL.md). Log-only; the
++          * loadB() calls are not evaluated when logging is off. */
++         if (data == 0xFF) {
++            LINK_LOG("send 0xFF [4DA5=%02x 4DA7=%02x 4DA9=%02x 4D62=%02x%02x 4D3E=%02x 4013=%02x%02x 400F=%02x%02x]\n",
++                    loadB(0x4DA5), loadB(0x4DA7), loadB(0x4DA9),
++                    loadB(0x4D62), loadB(0x4D63),
++                    loadB(0x4D3E),
++                    loadB(0x4013), loadB(0x4014),
++                    loadB(0x400F), loadB(0x4010));
++         } else {
++            LINK_LOG("send 0x%02x\n", data);
++         }
++      }
++      return;
++   }
++#endif
++   link_comms_buf[link_comms_head & (LINK_COMMS_CAP - 1)] = data;
++   link_comms_head++;
++   if (data == 0xFF) {
++      LINK_LOG("write 0xFF (head=%u tail=%u) [4DA5=%02x 4DA7=%02x 4DA9=%02x 4D62=%02x%02x 4D3E=%02x 4013=%02x%02x 400F=%02x%02x]\n",
++              link_comms_head, link_comms_tail,
++              loadB(0x4DA5), loadB(0x4DA7), loadB(0x4DA9),
++              loadB(0x4D62), loadB(0x4D63),
++              loadB(0x4D3E),
++              loadB(0x4013), loadB(0x4014),
++              loadB(0x400F), loadB(0x4010));
++   } else {
++      LINK_LOG("write 0x%02x (head=%u tail=%u)\n",
++              data, link_comms_head, link_comms_tail);
++   }
++}
+ 
+ bool system_io_flash_read(uint8_t *s, uint32_t len)
+ {

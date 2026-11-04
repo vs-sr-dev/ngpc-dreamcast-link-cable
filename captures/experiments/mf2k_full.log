@@ -1,0 +1,906 @@
+[   0.001] SR3 bridge starting -- pid=45088
+[   0.001] Flycast peer: 127.0.0.1:37391
+[   0.001] DIAG: ECHO_HANDSHAKE=1 -- rule1 0x92->0x92
+[   0.001] SYNTH: MF2K ACK synthesis ENABLED -- reply frame ff001000000000000000001c00000400000c00001000ff delay=100ms
+[   0.003] UDP bind OK on 0.0.0.0:42500 (Flycast should have server=42500)
+[   0.003] TCP listen OK on 0.0.0.0:42424 (beetle-ngp client should connect here)
+[   0.287] TCP accept from 127.0.0.1:56281 (NGPC peer attached)
+[   0.288] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   0.288]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   0.292] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   0.292]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   0.299] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   1.338] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   1.338]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   1.368] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   1.368]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   1.398] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   2.438] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   2.438]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   2.468] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   2.468]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   2.498] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   3.538] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   3.539]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   3.568] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   3.568]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   3.608] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   4.638] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   4.638]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   4.668] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   4.668]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   4.708] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   5.738] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   5.738]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   5.768] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   5.768]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   5.807] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   6.837] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   6.838]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   6.868] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   6.868]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   6.907] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   7.938] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   7.938]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   7.968] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   7.968]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   8.008] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[   9.038] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   9.038]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   9.068] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[   9.068]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[   9.108] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  10.138] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  10.138]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  10.168] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  10.168]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  10.208] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  11.238] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  11.238]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  11.268] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  11.268]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  11.308] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  12.338] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  12.338]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  12.368] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  12.369]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  12.408] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  13.438] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  13.438]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  13.468] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  13.468]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  13.508] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  14.538] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  14.538]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  14.568] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  14.568]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  14.608] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  15.637] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  15.638]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  15.677] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  15.678]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  15.708] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  16.738] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  16.738]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  16.778] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  16.778]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  16.808] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  17.848] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  17.848]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  17.878] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  17.878]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  17.908] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  18.948] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  18.948]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  18.978] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  18.978]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  19.008] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  20.048] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  20.048]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  20.078] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  20.078]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  20.108] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  21.148] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  21.148]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  21.178] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  21.178]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  21.208] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  22.248] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  22.248]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  22.278] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  22.278]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  22.308] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  23.348] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  23.348]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  23.379] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  23.379]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  23.408] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  24.448] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  24.448]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  24.478] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  24.478]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  24.508] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  25.548] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  25.548]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  25.577] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  25.578]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  25.608] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  26.648] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  26.648]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  26.679] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  26.679]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  26.708] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  27.748] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  27.748]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  27.778] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  27.778]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  27.808] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  28.848] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  28.848]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  28.878] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  28.878]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  28.908] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  29.948] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  29.948]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  29.978] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  29.978]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  30.018] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  31.048] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  31.048]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  31.078] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  31.078]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  31.118] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  32.148] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  32.148]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  32.188] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  32.188]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  32.218] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  33.248] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  33.248]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  33.287] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  33.288]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  33.318] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  34.348] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  34.348]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  34.388] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  34.389]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  34.418] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  35.448] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  35.448]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  35.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  35.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  35.518] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  36.548] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  36.548]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  36.588] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  36.589]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  36.619] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  37.648] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  37.648]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  37.688] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  37.688]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  37.717] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  38.749] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  38.749]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  38.788] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  38.788]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  38.818] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  39.848] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  39.848]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  39.888] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  39.888]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  39.918] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  40.948] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  40.948]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  40.988] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  40.988]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  41.017] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  42.049] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  42.049]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  42.088] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  42.088]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  42.118] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  43.148] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  43.148]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  43.189] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  43.189]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  43.218] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  44.258] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  44.258]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  44.288] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  44.288]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  44.318] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  45.359] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  45.359]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  45.389] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  45.389]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  45.418] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  46.458] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  46.458]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  46.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  46.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  46.518] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  47.558] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  47.558]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  47.588] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  47.588]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  47.628] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  48.658] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  48.658]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  48.689] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  48.689]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  48.728] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  49.758] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  49.758]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  49.788] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  49.789]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  49.828] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  50.859] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  50.859]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  50.889] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  50.889]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  50.928] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  51.957] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  51.958]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  51.988] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  51.988]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  52.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  53.058] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  53.058]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  53.088] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  53.088]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  53.128] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  54.158] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  54.158]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  54.188] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  54.189]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  54.228] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  55.258] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  55.258]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  55.288] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  55.288]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  55.328] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  56.358] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  56.358]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  56.388] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  56.388]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  56.428] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  57.458] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  57.458]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  57.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  57.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  57.528] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  58.558] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  58.558]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  58.598] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  58.598]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  58.628] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  59.658] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  59.658]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  59.698] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  59.698]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  59.728] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  60.758] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  60.758]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  60.798] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  60.798]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  60.828] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  61.868] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  61.868]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  61.898] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  61.899]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  61.928] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  62.968] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  62.968]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  62.998] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  62.998]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  63.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  64.068] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  64.069]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  64.098] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  64.098]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  64.127] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  65.169] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  65.169]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  65.198] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  65.198]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  65.228] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  66.268] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  66.268]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  66.298] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  66.298]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  66.328] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  67.369] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  67.369]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  67.398] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  67.398]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  67.428] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  68.468] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  68.468]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  68.498] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  68.499]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  68.528] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  69.568] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  69.569]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  69.598] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  69.598]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  69.628] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  70.668] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  70.668]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  70.698] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  70.699]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  70.728] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  71.768] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  71.768]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  71.798] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  71.798]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  71.827] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  72.868] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  72.868]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  72.898] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  72.898]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  72.938] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  73.969] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  73.969]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  73.998] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  73.998]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  74.038] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  75.068] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  75.068]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  75.098] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  75.098]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  75.138] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  76.169] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  76.169]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  76.208] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  76.209]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  76.238] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  77.268] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  77.268]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  77.309] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  77.309]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  77.338] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  78.368] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  78.368]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  78.408] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  78.408]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  78.438] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  79.468] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  79.468]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  79.508] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  79.508]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  79.538] TCP<-NGPC 20 -> UDP->Flycast 'D' 20
+[  80.568] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  80.568]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  80.608] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  80.609]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  80.638] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  81.668] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  81.668]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  81.708] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  81.708]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  81.738] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  82.768] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  82.768]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  82.808] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  82.808]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  82.838] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  83.869] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  83.869]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  83.909] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  83.909]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  83.938] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  85.038] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  85.038]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  85.078] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  85.078]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  85.108] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  85.616] TCP recv error: [WinError 10054] Connessione in corso interrotta forzatamente dall'host remoto
+[  85.616] TCP peer ('127.0.0.1', 56281) disconnected
+[  89.399] TCP accept from 127.0.0.1:51390 (NGPC peer attached)
+[  93.878] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  93.878]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  93.919] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  93.919]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  93.948] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  94.978] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  94.978]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  95.018] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  95.018]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  95.048] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[  96.078] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  96.078]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  96.118] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  96.118]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  96.148] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[  97.178] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  97.178]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  97.219] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  97.219]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  97.250] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  98.278] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  98.278]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  98.318] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  98.319]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  98.348] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[  99.378] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  99.378]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  99.418] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[  99.418]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[  99.448] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 100.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 100.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 100.519] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 100.519]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 100.548] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 101.588] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 101.588]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 101.618] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 101.618]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 101.648] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 102.688] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 102.688]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 102.718] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 102.718]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 102.748] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 103.787] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 103.788]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 103.818] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 103.818]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 103.858] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 104.888] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 104.888]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 104.919] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 104.919]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 104.958] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 105.988] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 105.988]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 106.018] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 106.018]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 106.058] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 107.088] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 107.088]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 107.118] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 107.119]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 107.158] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 108.188] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 108.188]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 108.218] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 108.218]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 108.258] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 109.288] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 109.288]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 109.318] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 109.318]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 109.359] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 110.389] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 110.389]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 110.419] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 110.419]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 110.458] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 111.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 111.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 111.519] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 111.519]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 111.558] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 112.588] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 112.588]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 112.618] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 112.618]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 112.658] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 113.688] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 113.688]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 113.718] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 113.718]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 113.758] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 114.788] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 114.788]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 114.828] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 114.828]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 114.858] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 115.888] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 115.889]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 115.929] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 115.929]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 115.959] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 116.989] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 116.989]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 117.029] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 117.029]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 117.058] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 118.098] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 118.098]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 118.128] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 118.128]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 118.158] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 119.258] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 119.258]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 119.298] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 119.298]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 119.328] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 120.358] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.358]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 120.398] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 120.398]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 120.428] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 121.459] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.459]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 121.498] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 121.498]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 121.528] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 122.558] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.558]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 122.598] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 122.598]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 122.628] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 123.658] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.658]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 123.698] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 123.698]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 123.728] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 124.758] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.758]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 124.798] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 124.798]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 124.828] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 125.868] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 125.868]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 125.898] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 125.898]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 125.928] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 126.968] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 126.968]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 126.998] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 126.998]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 127.028] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 128.068] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 128.068]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 128.099] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 128.099]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 128.128] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 129.168] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 129.168]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 129.198] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 129.198]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 129.238] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 130.268] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 130.268]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 130.298] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 130.298]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 130.338] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 131.368] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 131.368]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 131.398] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 131.398]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 131.438] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 132.468] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 132.468]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 132.498] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 132.499]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 132.538] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 133.568] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 133.568]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 133.598] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 133.598]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 133.638] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 134.669] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 134.669]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 134.698] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 134.698]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 134.738] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 135.768] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 135.768]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 135.798] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 135.798]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 135.837] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 136.869] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 136.869]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 136.898] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 136.898]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 136.938] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 137.968] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 137.968]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 137.998] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 137.998]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 138.038] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 139.068] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 139.068]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 139.098] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 139.098]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 139.138] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 140.168] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 140.168]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 140.208] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 140.208]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 140.238] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 141.267] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 141.268]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 141.308] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 141.308]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 141.338] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 142.368] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 142.369]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 142.409] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 142.409]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 142.438] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 143.478] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 143.478]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 143.509] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 143.509]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 143.538] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 144.578] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 144.578]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 144.608] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 144.608]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 144.638] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 145.678] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 145.678]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 145.709] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 145.709]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 145.738] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 146.778] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 146.778]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 146.808] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 146.809]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 146.838] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 147.878] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 147.878]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 147.908] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 147.908]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 147.938] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 148.978] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 148.978]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 149.008] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 149.008]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 149.038] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 150.077] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 150.078]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 150.109] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 150.109]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 150.138] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 151.179] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 151.179]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 151.208] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 151.208]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 151.238] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 152.278] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 152.278]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 152.309] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 152.309]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 152.338] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 153.378] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 153.378]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 153.408] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 153.408]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 153.438] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 154.478] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 154.478]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 154.508] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 154.509]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 154.548] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 155.578] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 155.578]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 155.608] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 155.608]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 155.648] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 156.678] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 156.678]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 156.708] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 156.708]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 156.748] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 157.778] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 157.778]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 157.818] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 157.818]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 157.848] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 158.877] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 158.878]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 158.918] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 158.918]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 158.948] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 159.978] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 159.978]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 160.018] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 160.018]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 160.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 161.079] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 161.079]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 161.118] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 161.118]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 161.148] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 162.178] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 162.178]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 162.218] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 162.218]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 162.248] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 163.278] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 163.278]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 163.318] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 163.318]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 163.349] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 164.378] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 164.378]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 164.419] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 164.419]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 164.448] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 165.478] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 165.479]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 165.518] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 165.518]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 165.548] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 166.578] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 166.578]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 166.619] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 166.619]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 166.648] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 167.678] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 167.678]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 167.718] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 167.718]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 167.748] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 168.788] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 168.788]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 168.818] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 168.818]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 168.848] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 169.888] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 169.888]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 169.918] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 169.918]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 169.948] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 170.988] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 170.988]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 171.018] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 171.018]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 171.048] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 172.088] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 172.088]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 172.118] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 172.118]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 172.158] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 173.187] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 173.188]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 173.218] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 173.218]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 173.258] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 174.288] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 174.288]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 174.318] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 174.318]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 174.358] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 174.853] TCP recv error: [WinError 10054] Connessione in corso interrotta forzatamente dall'host remoto
+[ 174.853] TCP peer ('127.0.0.1', 51390) disconnected
+[ 212.199] TCP accept from 127.0.0.1:3946 (NGPC peer attached)
+[ 215.348] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 215.348]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 215.388] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 215.388]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 215.418] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 216.448] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 216.448]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 216.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 216.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 216.518] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 217.558] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 217.558]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 217.587] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 217.588]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 217.619] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 218.659] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 218.659]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 218.688] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 218.688]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 218.719] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 219.295] TCP recv error: [WinError 10054] Connessione in corso interrotta forzatamente dall'host remoto
+[ 219.296] TCP peer ('127.0.0.1', 3946) disconnected
+[ 292.641] TCP accept from 127.0.0.1:3953 (NGPC peer attached)
+[ 318.389] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 318.389]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 318.428] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 318.428]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 318.458] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 319.488] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 319.488]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 319.528] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 319.528]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 319.558] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 320.588] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 320.588]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 320.628] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 320.628]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 320.659] TCP<-NGPC 08 -> UDP->Flycast 'D' 08
+[ 321.689] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 321.689]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 321.728] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 321.728]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 321.758] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 322.798] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 322.798]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 322.828] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 322.828]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 322.858] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 323.899] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 323.899]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 323.929] TCP<-NGPC 92 -> UDP->Flycast 'D' 92
+[ 323.929]   [DIAG-ECHO] saw 0x92, injected 0x92 back to NGPC
+[ 323.959] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.698] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 335.698] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.698] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 335.698] TCP<-NGPC 31 -> UDP->Flycast 'D' 31
+[ 335.698] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.698] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.698] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.699] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 335.699]   [SYNTH] NGPC frame complete (18B): ff 00 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 ff
+[ 335.799]   [SYNTH-ACK] sent MF2K ACK frame (23B) back to NGPC
+[ 335.799] Flycast peer seen from 127.0.0.1:37391
+[ 335.799] UDP<-Flycast 'D' ff
+[ 335.799] UDP<-Flycast 'D' 00
+[ 335.799] UDP<-Flycast 'D' 10
+[ 335.799] UDP<-Flycast 'D' 00
+[ 335.799] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 1c
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 04
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 0c
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' 10
+[ 335.800] UDP<-Flycast 'D' 00
+[ 335.800] UDP<-Flycast 'D' ff
+[ 335.829] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 10 -> UDP->Flycast 'D' 10
+[ 335.829] TCP<-NGPC 02 -> UDP->Flycast 'D' 02
+[ 335.829] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 335.829] TCP<-NGPC 01 -> UDP->Flycast 'D' 01
+[ 335.829] TCP<-NGPC 00 -> UDP->Flycast 'D' 00
+[ 335.829] TCP<-NGPC ff -> UDP->Flycast 'D' ff
+[ 335.829]   [SYNTH] NGPC frame complete (16B): ff 00 10 02 01 00 00 00 00 01 00 00 01 01 00 ff
+[ 335.872] UDP<-Flycast 'D' ff
+[ 335.872] UDP<-Flycast 'D' 00
+[ 335.888] UDP<-Flycast 'D' 10
+[ 335.888] UDP<-Flycast 'D' 00
+[ 335.888] UDP<-Flycast 'D' 00
+[ 335.888] UDP<-Flycast 'D' 01
+[ 335.888] UDP<-Flycast 'D' 00
+[ 335.889] UDP<-Flycast 'D' 00
+[ 335.889] UDP<-Flycast 'D' 00
+[ 335.889] UDP<-Flycast 'D' 00
+[ 335.889] UDP<-Flycast 'D' 01
+[ 335.890] UDP<-Flycast 'D' 00
+[ 335.890] UDP<-Flycast 'D' 00
+[ 335.890] UDP<-Flycast 'D' 01
+[ 335.890] UDP<-Flycast 'D' 01
+[ 335.890] UDP<-Flycast 'D' 00
+[ 335.891] UDP<-Flycast 'D' ff
+[ 345.024] TCP recv error: [WinError 10054] Connessione in corso interrotta forzatamente dall'host remoto
+[ 345.024] TCP peer ('127.0.0.1', 3953) disconnected
