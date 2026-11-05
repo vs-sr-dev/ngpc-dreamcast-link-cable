@@ -38,6 +38,7 @@ homebrew/ngpc_hello_link/bin/
 # Dreamcast demo build products
 *.o
 *.elf
+*.bin.span
 
 # Python
 __pycache__/

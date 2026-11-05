@@ -16,3 +16,7 @@ set MOTM_ROM=C:\path\to\your\SNK vs. Capcom - The Match of the Millennium (World
 
 REM Where the core and the bridge write their logs. Leave empty to disable.
 set LINK_LOGS=%~dp0..\logs
+
+REM Real Dreamcast on a USB-UART adapter (bridge_serial.bat): COM port and speed.
+set DC_SERIAL=COM7
+set DC_BAUD=19200

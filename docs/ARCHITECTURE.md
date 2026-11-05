@@ -179,6 +179,17 @@ C++ option variable, `core/cfg/option.cpp`). The option is checked in
 Dreamcast title, not just the one you are testing, and takes over the SCIF
 for all of them. Switch it off afterwards.
 
+## A real Dreamcast instead of Flycast (prototype)
+
+With `BRIDGE_SERIAL=<port>` the bridge replaces the Flycast UDP side with a
+serial port (pyserial): bytes from the NGPC are written to the port one TCP
+chunk at a time, bytes from the port go through the same frame coalescing.
+A reader thread feeds the port into a socket pair, because Windows cannot
+`select()` on a COM port. Defaults: 19200 baud, 8N1, RTS asserted, the
+values the NGPC BIOS programs into its own UART. Tested on a real
+Dreamcast with `homebrew/dc_link_probe` standing in for MF2K, not yet with
+the retail game. See [SETUP.md](SETUP.md#8-real-dreamcast-prototype).
+
 ## The demos
 
 | | NGPC ([`homebrew/ngpc_hello_link`](../homebrew/ngpc_hello_link/)) | Dreamcast ([`homebrew/dc_hello_link`](../homebrew/dc_hello_link/)) |

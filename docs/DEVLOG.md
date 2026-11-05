@@ -201,6 +201,51 @@ them whole, showed the success line and unlocked the eight characters.
 
 ---
 
+## A real Dreamcast, without the retail game (November 2026)
+
+The plan for real hardware was MF2K on a burned CD-R. It fell through: the
+game's three largest files (850 MB in all) are checked at boot for their
+exact size and for marker values, so they cannot be shrunk to fit a CD-R
+without defeating that check, and we did not. An original disc was
+ordered. DM99, the other Dreamcast game, booted from CD-R and then went
+back to the BIOS after about 2.5 s, cause unknown.
+
+At 3:44 one morning the user asked whether the cable test needed a retail
+game at all. It did not. The game's role in the test is to speak the
+Dreamcast side of the protocol, and the captures already held every byte
+of it. `homebrew/dc_link_probe` does that on the console and shows on the
+TV what the serial port sees. Each step then tests one thing more: the
+probe alone, the probe against a script, the probe against the real MOTM,
+and finally the retail game, where the only unknown left is the game.
+
+The first build received nothing in Flycast. It used KallistiOS's
+interrupt-driven receive ring, and Flycast does not raise the SCIF receive
+interrupt; the April demo had worked because it polled. The probe now
+polls the FIFO between screen rows and while it waits for vblank. That
+has to be often: at 19200 baud about 32 bytes arrive per video frame, and
+the FIFO holds 16.
+
+On the console, the probe was pushed over the serial line by the
+development disc of another project (DC-LBA2), whose boot binary listens
+for a new build for a few seconds. That disc first booted as an audio CD:
+the PC still read all of it without errors, but slowly, and another CD-R
+booted fine, so the disc had worn. It booted after a few power cycles.
+Then, in about twenty minutes:
+
+| Test | Result |
+|---|---|
+| 5 × 256 bytes there and back at 19200 | all intact, no framing errors |
+| Adapter's RTS → console's CTS | follows on the probe screen |
+| Console's RTS → adapter's CTS | follows in `dc_probe.py` |
+| MOTM's dialogue from a script on COM7 | every answer exact; acknowledgement after ~100 ms |
+| MOTM in RetroArch → bridge → COM7 → console | 30 points, checksum OK, Karin confirms the upload |
+
+The full upload took about 355 ms, against about 270 ms between two
+emulators; the difference is the real serial line and USB latency, and
+MOTM did not mind.
+
+---
+
 ## The bugs, in one table
 
 | Bug | Where | Symptom | Cost |

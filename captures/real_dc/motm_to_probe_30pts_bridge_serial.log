@@ -1,0 +1,171 @@
+[   0.001] NGPC<->DC bridge starting -- pid=26208
+[   0.001] Dreamcast peer: serial COM7 19200 8N1, RTS on
+[   0.001] DC->NGPC frame coalescing ON (timeout 250 ms)
+[   0.044] serial COM7 open at 19200 8N1
+[   0.045] TCP listen OK on 0.0.0.0:42424 (beetle-ngp client should connect here)
+[   0.064] serial CTS asserted (the Dreamcast's RTS, if the adapter wires it)
+[  16.582] TCP accept from 127.0.0.1:57087 (NGPC peer attached)
+[  16.611] TCP<-NGPC 92 -> SER->DC 92
+[  16.642] TCP<-NGPC 92 -> SER->DC 92
+[  16.681] TCP<-NGPC 92 -> SER->DC 92
+[  16.712] TCP<-NGPC 92 -> SER->DC 92
+[  16.742] TCP<-NGPC 92 -> SER->DC 92
+[  16.782] TCP<-NGPC 92 -> SER->DC 92
+[  16.811] TCP<-NGPC 92 -> SER->DC 92
+[  16.842] TCP<-NGPC 92 -> SER->DC 92
+[  16.881] TCP<-NGPC 92 -> SER->DC 92
+[  16.911] TCP<-NGPC 92 -> SER->DC 92
+[  16.942] TCP<-NGPC 92 -> SER->DC 92
+[  16.981] TCP<-NGPC 92 -> SER->DC 92
+[  17.012] TCP<-NGPC 92 -> SER->DC 92
+[  17.042] TCP<-NGPC 92 -> SER->DC 92
+[  17.081] TCP<-NGPC 92 -> SER->DC 92
+[  17.112] TCP<-NGPC 92 -> SER->DC 92
+[  17.141] TCP<-NGPC 92 -> SER->DC 92
+[  17.181] TCP<-NGPC 92 -> SER->DC 92
+[  17.212] TCP<-NGPC 92 -> SER->DC 92
+[  17.241] TCP<-NGPC 92 -> SER->DC 92
+[  17.282] TCP<-NGPC 92 -> SER->DC 92
+[  17.311] TCP<-NGPC 92 -> SER->DC 92
+[  17.342] TCP<-NGPC 92 -> SER->DC 92
+[  17.382] TCP<-NGPC 92 -> SER->DC 92
+[  17.412] TCP<-NGPC 92 -> SER->DC 92
+[  17.442] TCP<-NGPC 92 -> SER->DC 92
+[  17.482] TCP<-NGPC 92 -> SER->DC 92
+[  17.511] TCP<-NGPC 92 -> SER->DC 92
+[  17.542] TCP<-NGPC 92 -> SER->DC 92
+[  17.582] TCP<-NGPC 92 -> SER->DC 92
+[  17.612] TCP<-NGPC 92 -> SER->DC 92
+[  17.642] TCP<-NGPC 92 -> SER->DC 92
+[  17.682] TCP<-NGPC 92 -> SER->DC 92
+[  17.711] TCP<-NGPC 92 -> SER->DC 92
+[  17.743] TCP<-NGPC 92 -> SER->DC 92
+[  17.782] TCP<-NGPC 92 -> SER->DC 92
+[  17.812] TCP<-NGPC 92 -> SER->DC 92
+[  44.961] TCP<-NGPC ff -> SER->DC ff
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 31 -> SER->DC 31
+[  44.962] TCP<-NGPC 31 -> SER->DC 31
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.962] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC 00 -> SER->DC 00
+[  44.964] TCP<-NGPC ff -> SER->DC ff
+[  45.050] SER<-DC ff
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 10
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 1c
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 04
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 0c
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC 10
+[  45.050] SER<-DC 00
+[  45.050] SER<-DC ff
+[  45.050]   -> NGPC frame 23B delivered in one write
+[  45.063] TCP<-NGPC ff -> SER->DC ff
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.063] TCP<-NGPC 10 -> SER->DC 10
+[  45.063] TCP<-NGPC 02 -> SER->DC 02
+[  45.063] TCP<-NGPC 01 -> SER->DC 01
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.063] TCP<-NGPC 01 -> SER->DC 01
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.063] TCP<-NGPC 00 -> SER->DC 00
+[  45.065] TCP<-NGPC 01 -> SER->DC 01
+[  45.065] TCP<-NGPC 01 -> SER->DC 01
+[  45.065] TCP<-NGPC 00 -> SER->DC 00
+[  45.065] TCP<-NGPC ff -> SER->DC ff
+[  45.111] SER<-DC ff
+[  45.111] SER<-DC 00
+[  45.112] SER<-DC 10
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 01
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 01
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC 01
+[  45.112] SER<-DC 01
+[  45.112] SER<-DC 00
+[  45.112] SER<-DC ff
+[  45.112]   -> NGPC frame 17B delivered in one write
+[  45.222] TCP<-NGPC ff -> SER->DC ff
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.222] TCP<-NGPC 10 -> SER->DC 10
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.222] TCP<-NGPC 02 -> SER->DC 02
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.222] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 25 -> SER->DC 25
+[  45.224] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 06 -> SER->DC 06
+[  45.224] TCP<-NGPC 01 -> SER->DC 01
+[  45.224] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 00 -> SER->DC 00
+[  45.224] TCP<-NGPC 06 -> SER->DC 06
+[  45.226] TCP<-NGPC 00 -> SER->DC 00
+[  45.226] TCP<-NGPC 00 -> SER->DC 00
+[  45.226] TCP<-NGPC 1e -> SER->DC 1e
+[  45.226] TCP<-NGPC 00 -> SER->DC 00
+[  45.226] TCP<-NGPC ff -> SER->DC ff
+[  45.316] SER<-DC ff
+[  45.316] SER<-DC 00
+[  45.316] SER<-DC 10
+[  45.316] SER<-DC 00
+[  45.316] SER<-DC 00
+[  45.337] SER<-DC 02
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 25
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 06
+[  45.337] SER<-DC 01
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 06
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC 1e
+[  45.337] SER<-DC 00
+[  45.337] SER<-DC ff
+[  45.337]   -> NGPC frame 25B delivered in one write

@@ -17,6 +17,16 @@ As far as we know, no emulator emulated this cable before. Flycast already
 had a serial "battle cable" over UDP; no NGPC emulator had anything on the
 other end. This repository adds that end, plus the bridge between the two.
 
+**The cable path to a real Dreamcast works too, at prototype level.** An
+emulated MOTM, through the bridge and a USB-UART adapter plugged into the
+console's serial port, completed its upload to a real Dreamcast running a
+homebrew stand-in that answers like MF2K
+([`dc_link_probe`](homebrew/README.md#dc_link_probe)). The retail game itself
+has not been tried on hardware yet. If it behaves as it does in Flycast,
+anyone with a Dreamcast and their own copy of MF2K can send it VS Points
+from an emulated MOTM, without ever having owned a Neo Geo Pocket Color or
+the cable.
+
 ```
  RetroArch + patched beetle-ngp          bridge/bridge.py                    Flycast (stock)
  ┌──────────────────────────┐   TCP    ┌──────────────────┐    UDP     ┌──────────────────────┐
@@ -44,9 +54,10 @@ no game at all.
 | RetroArch (Windows) | Runs the patched NGPC core |
 | Flycast, with whatever BIOS setup you normally use | Dreamcast side, unmodified |
 | MSYS2 + mingw64 gcc | Building the patched core |
-| Python 3.8+ | The bridge (standard library only) |
+| Python 3.8+ | The bridge (standard library only; pyserial for a real Dreamcast) |
 | *Optional:* cc900 toolchain (`ngpcbins`) + [ngpc-project-template](https://github.com/ameliandev/ngpc-project-template) | Building the NGPC demo ROM |
-| *Optional:* a KallistiOS toolchain | Building the Dreamcast demo ELF |
+| *Optional:* a KallistiOS toolchain | Building the Dreamcast demo and probe |
+| *Optional, real Dreamcast:* a 3.3 V USB-UART adapter wired to the console's serial port, and a way to boot homebrew on it | The real-hardware test |
 | *Optional, retail:* *SNK vs. Capcom: The Match of the Millennium* (World, En/Ja) `.ngc` | NGPC side of the retail test |
 | *Optional, retail:* *Capcom vs. SNK: Millennium Fight 2000* (Japan, Rev A) disc image | Dreamcast side of the retail test |
 
@@ -61,10 +72,12 @@ no game at all.
 | 3. NGPC ↔ Dreamcast | Homebrew demos on both sides, through the bridge and Flycast's BattleCable | ✅ |
 | Retail | MOTM ↔ MF2K upload completes; VS Points arrive; secret characters unlock | ✅ (needs the bridge's frame coalescing, on by default; see [PROTOCOL.md](docs/PROTOCOL.md#motm-reads-a-frame-until-its-buffer-runs-dry)) |
 | Retail, second pair | MOTM → *KoF Dream Match 1999* and *KoF R-2* → DM99 uploads complete; R-2 works with the core unchanged | ✅ in emulation (DM99 → R-2 not yet captured; see [PROTOCOL.md](docs/PROTOCOL.md#the-king-of-fighters-dream-match-1999)) |
+| Real Dreamcast | Emulated MOTM → bridge → USB-UART adapter → console serial port → homebrew stand-in for MF2K: upload completes, points and checksum arrive, MOTM confirms; clean loopback at 19200, all four cable lines (TX, RX, RTS, CTS) work | ✅ prototype (retail MF2K on hardware not yet tried; see [SETUP.md](docs/SETUP.md#8-real-dreamcast-prototype)) |
 
-**Emulator only.** Nothing here has run on real hardware. The NGPC demo
-calls the BIOS entry points directly, which works on beetle-ngp's HLE BIOS
-and nowhere else (see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#known-limitations)).
+**The NGPC is always emulated.** Only the Dreamcast side has run on real
+hardware, and only with the homebrew stand-in. The NGPC demo calls the BIOS
+entry points directly, which works on beetle-ngp's HLE BIOS and nowhere else
+(see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#known-limitations)).
 
 **Windows only, for the NGPC side.** The TCP backend in the core patch uses
 Winsock; on other platforms the patched core compiles but falls back to the
@@ -121,7 +134,10 @@ game, then `launchers\motm_client.bat` (retail) or `launchers\demo_client.bat`
 | [`launchers/`](launchers/) | Windows `.bat` files for every ring and capture mode |
 | [`homebrew/ngpc_hello_link/`](homebrew/ngpc_hello_link/) | NGPC demo: press A to send `0x42`, counters for TX/RX |
 | [`homebrew/dc_hello_link/`](homebrew/dc_hello_link/) | Dreamcast demo: A/B/X send `0x42`/`0xAB`/`0xC5`, counters for TX/RX |
+| [`homebrew/dc_link_probe/`](homebrew/dc_link_probe/) | Serial link diagnostics for a real Dreamcast: bytes, errors and RTS/CTS on screen; sniff, echo, or answer like MF2K / DM99 |
 | [`tools/frames.py`](tools/frames.py) | Rebuilds the FF-delimited frames from a bridge log |
+| [`tools/first_contact.py`](tools/first_contact.py) | Plays MOTM's upload request through the bridge and checks MF2K's answer: the first test of any new setup |
+| [`tools/dc_probe.py`](tools/dc_probe.py) | PC side of the probe: serial upload, loopback, RTS/CTS and MOTM-dialogue tests |
 | [`tools/re/`](tools/re/) | Probes used to reverse-engineer MF2K: fuzzer, BREAK probe, frame replay |
 | [`tools/trace/`](tools/trace/) | MAME debugger and BizHawk Lua scripts that trace the BIOS comms vectors |
 | [`captures/`](captures/) | Byte logs of the retail runs and of the experiments that led there |
@@ -149,6 +165,15 @@ emulator sources, did the MAME disassembly work and the analysis of the
 captures, and wrote the session logs. The repository was later assembled
 from that working tree, cleaned up and documented in English by **Claude
 Opus 5.5**, also in Claude Code.
+
+**The real-Dreamcast test (November 2026).** With the MF2K disc image ruled
+out (it cannot be made to fit a CD-R without defeating the game's copy
+check), Samuele had the idea that unblocked the hardware test: the cable
+does not need the retail game, only something on the console that speaks
+the Dreamcast side of the protocol. He ran every hardware test, from
+coaxing a worn development disc into booting to playing MOTM for the final
+upload. **Claude Opus 5.5**, in Claude Code, wrote the bridge's serial mode,
+the probe and its PC-side tool, and tested them in Flycast first.
 
 ## Credits
 

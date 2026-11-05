@@ -50,6 +50,18 @@ LOG_PATH          =     os.environ.get("BRIDGE_LOG", "")
 COALESCE          =     os.environ.get("BRIDGE_COALESCE_FRAMES", "1") != "0"
 COALESCE_TIMEOUT  = float(os.environ.get("BRIDGE_COALESCE_TIMEOUT_MS", "250")) / 1000.0
 COALESCE_MAX      = 64
+# Real Dreamcast instead of Flycast: talk to the DC serial port through a
+# USB-UART adapter (needs pyserial). The NGPC BIOS sets its UART to 19200
+# baud, 8N1, with CTS flow control (VECT_COMINIT: SC0MOD=49h, BR0CR=05h),
+# so that is the default. RTS is asserted so that, if the adapter wires it
+# to the Dreamcast's CTS, the game sees a peer ready to receive; changes of
+# the adapter's CTS input (the Dreamcast's RTS, if wired) are logged.
+#   BRIDGE_SERIAL=COM7            enable, replaces the Flycast UDP side
+#   BRIDGE_BAUD=19200
+#   BRIDGE_SERIAL_RTS=0           leave RTS deasserted
+SERIAL_PORT       =     os.environ.get("BRIDGE_SERIAL", "")
+SERIAL_BAUD       = int(os.environ.get("BRIDGE_BAUD", "19200"))
+SERIAL_RTS        =     os.environ.get("BRIDGE_SERIAL_RTS", "1") != "0"
 # Diagnostic: when set, bridge echoes a byte back to NGPC whenever it
 # sees the configured trigger byte, to simulate a Flycast-side ack in
 # isolation. Does NOT suppress forwarding to Flycast.
@@ -150,6 +162,45 @@ def make_udp(bind_port):
     return s
 
 
+def open_serial(port, baud, rts):
+    """Open the USB-UART adapter and pump its input into a socket, so the
+    main selector loop can wait on it like on the UDP and TCP sockets
+    (Windows cannot select() on a COM port)."""
+    try:
+        import serial
+    except ImportError:
+        sys.exit("BRIDGE_SERIAL needs pyserial: python -m pip install pyserial")
+    import threading
+    ser = serial.serial_for_url(port, baudrate=baud, bytesize=8, parity="N",
+                                stopbits=1, timeout=0.02, rtscts=False)
+    try:
+        ser.rts = rts
+    except Exception:
+        pass
+    rx, tx = socket.socketpair()
+    rx.setblocking(False)
+
+    def pump():
+        last_cts = None
+        while True:
+            try:
+                data = ser.read(256)
+                cts = ser.cts
+            except Exception as e:
+                log(f"serial read failed: {e}")
+                tx.close()
+                return
+            if cts != last_cts:
+                log(f"serial CTS {'asserted' if cts else 'released'} (the Dreamcast's RTS, if the adapter wires it)")
+                last_cts = cts
+            if data:
+                tx.sendall(data)
+
+    threading.Thread(target=pump, daemon=True).start()
+    log(f"serial {port} open at {baud} 8N1")
+    return ser, rx
+
+
 def make_tcp_server(bind_port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -164,7 +215,12 @@ def main():
     global _log_fp
     _log_fp = open_log(LOG_PATH) if LOG_PATH else None
     log(f"NGPC<->DC bridge starting -- pid={os.getpid()}")
-    log(f"Flycast peer: {UDP_FLYCAST_HOST}:{UDP_FLYCAST_PORT}")
+    if SERIAL_PORT:
+        log(f"Dreamcast peer: serial {SERIAL_PORT} {SERIAL_BAUD} 8N1, RTS {'on' if SERIAL_RTS else 'off'}")
+        if SYNTH_DATA_FRAME:
+            sys.exit("BRIDGE_SYNTH_DATA_FRAME talks to Flycast directly; not available with BRIDGE_SERIAL")
+    else:
+        log(f"Flycast peer: {UDP_FLYCAST_HOST}:{UDP_FLYCAST_PORT}")
     log(f"DC->NGPC frame coalescing {'ON' if COALESCE else 'OFF'}"
         + (f" (timeout {COALESCE_TIMEOUT*1000:.0f} ms)" if COALESCE else ""))
     if ECHO_HANDSHAKE:
@@ -178,11 +234,18 @@ def main():
     if SYNTH_DATA_FRAME:
         log(f"SYNTH: MOTM data frame injection ENABLED -- payload {MOTM_DATA_FRAME.hex()} (VS Points={VS_POINTS_VAL} dec=0x{VS_POINTS_VAL:02x}) delay={DATA_FRAME_DELAY*1000:.0f}ms")
 
-    udp = make_udp(UDP_BIND_PORT)
+    udp = ser = ser_rx = None
+    if SERIAL_PORT:
+        ser, ser_rx = open_serial(SERIAL_PORT, SERIAL_BAUD, SERIAL_RTS)
+    else:
+        udp = make_udp(UDP_BIND_PORT)
     tcp_srv = make_tcp_server(TCP_BIND_PORT)
 
     sel = selectors.DefaultSelector()
-    sel.register(udp, selectors.EVENT_READ, data="udp")
+    if udp is not None:
+        sel.register(udp, selectors.EVENT_READ, data="udp")
+    if ser_rx is not None:
+        sel.register(ser_rx, selectors.EVENT_READ, data="serial")
     sel.register(tcp_srv, selectors.EVENT_READ, data="tcp_accept")
 
     tcp_peer = None
@@ -211,6 +274,18 @@ def main():
             tcp_peer.close()
             tcp_peer = None
 
+    def from_dc(byte):
+        nonlocal dc_frame, dc_frame_t0
+        if COALESCE and (dc_frame or byte == 0xFF):
+            if not dc_frame:
+                dc_frame_t0 = time.time()
+            dc_frame.append(byte)
+            if (byte == 0xFF and len(dc_frame) > 1) or len(dc_frame) >= COALESCE_MAX:
+                to_ngpc(bytes(dc_frame), f"frame {len(dc_frame)}B")
+                dc_frame = bytearray()
+        else:
+            to_ngpc(bytes([byte]))
+
     while True:
         events = sel.select(timeout=0.02 if dc_frame else 1.0)
         if dc_frame and time.time() - dc_frame_t0 > COALESCE_TIMEOUT:
@@ -232,19 +307,23 @@ def main():
                     if len(pkt) == 2 and pkt[0:1] == b"D":
                         byte = pkt[1]
                         log(f"UDP<-Flycast 'D' {byte:02x}")
-                        if COALESCE and (dc_frame or byte == 0xFF):
-                            if not dc_frame:
-                                dc_frame_t0 = time.time()
-                            dc_frame.append(byte)
-                            if (byte == 0xFF and len(dc_frame) > 1) or len(dc_frame) >= COALESCE_MAX:
-                                to_ngpc(bytes(dc_frame), f"frame {len(dc_frame)}B")
-                                dc_frame = bytearray()
-                        else:
-                            to_ngpc(bytes([byte]))
+                        from_dc(byte)
                     elif len(pkt) == 1 and pkt[0:1] == b"B":
                         log("UDP<-Flycast 'B' break (discarded, NGPC has no break)")
                     else:
                         log(f"UDP<-Flycast unexpected packet len={len(pkt)} head={pkt[:4]!r}")
+
+            elif key.data == "serial":
+                try:
+                    data = ser_rx.recv(4096)
+                except BlockingIOError:
+                    continue
+                if not data:
+                    log("serial reader stopped; exiting")
+                    return
+                for byte in data:
+                    log(f"SER<-DC {byte:02x}")
+                    from_dc(byte)
 
             elif key.data == "tcp_accept":
                 try:
@@ -281,14 +360,23 @@ def main():
                     tcp_peer = None
                     tcp_peer_addr = None
                     continue
-                for b in chunk:
-                    pkt = bytes([0x44, b])
+                if ser is not None:
+                    # one write per TCP chunk: the frame goes out back to back
                     try:
-                        udp.sendto(pkt, (UDP_FLYCAST_HOST, UDP_FLYCAST_PORT))
-                    except OSError as e:
-                        log(f"UDP send to Flycast failed: {e}")
-                        break
-                    log(f"TCP<-NGPC {b:02x} -> UDP->Flycast 'D' {b:02x}")
+                        ser.write(chunk)
+                    except Exception as e:
+                        log(f"serial write failed: {e}")
+                for b in chunk:
+                    if ser is not None:
+                        log(f"TCP<-NGPC {b:02x} -> SER->DC {b:02x}")
+                    else:
+                        pkt = bytes([0x44, b])
+                        try:
+                            udp.sendto(pkt, (UDP_FLYCAST_HOST, UDP_FLYCAST_PORT))
+                        except OSError as e:
+                            log(f"UDP send to Flycast failed: {e}")
+                            break
+                        log(f"TCP<-NGPC {b:02x} -> UDP->Flycast 'D' {b:02x}")
                     if SYNTH_MF2K_ACK:
                         # Track last 4 bytes from NGPC, detect MOTM upload-request prefix
                         ngpc_tail.append(b)

@@ -28,3 +28,23 @@ that only the patched core writes (launch with `NGPC_LINK_MMIO=1`, as the
 - Screen: TX count, RX count, last byte received.
 
 Pure KallistiOS. Runs in Flycast as an `.elf`.
+
+## `dc_link_probe/`
+
+Serial link diagnostics for a **real** Dreamcast, so that the cable can be
+tested without a retail Dreamcast game. The screen shows the received bytes,
+error counters (framing errors mean a wrong baud rate), and the CTS and RTS
+lines. SCIF at 19200 8N1, as set by the NGPC BIOS.
+
+- **A**: cycles the mode: `SNIFF` (listen only), `ECHO` (sends every byte
+  back), `FAKE MF2K` / `FAKE DM99` (answers MOTM's upload like those games,
+  using the frames in `captures/`, and decodes the points and checksum).
+- **X**: clear. **Y**: send a test line. **D-pad up**: hardware flow
+  control (MCE) on/off. **D-pad down**: the Dreamcast's RTS
+  default/asserted/released.
+
+`build.sh` (same options as `dc_hello_link`) produces `dc_link_probe.elf`
+for Flycast and `dc_link_probe.bin` + `.bin.span` for a serial loader. The
+PC side is [`tools/dc_probe.py`](../tools/README.md#dc_probepy). Add
+`-DPROBE_START_MODE=MODE_MF2K` (or `MODE_ECHO`) to start in another mode in
+Flycast, where no one presses the buttons.

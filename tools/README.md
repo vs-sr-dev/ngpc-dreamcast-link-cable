@@ -10,6 +10,39 @@ probe, the VS sync stream) into byte counts.
 python tools/frames.py captures/retail/deterministic_3runs_bridge.log
 ```
 
+## `first_contact.py`
+
+Plays MOTM's side of the upload request through the bridge (as if it were
+the NGPC core) and reports whether MF2K answers with its 23-byte
+acknowledgement. The quickest check of a new setup, Flycast or a real
+Dreamcast on the serial port: MF2K on *Download Stand By*, the bridge
+running, then
+
+```bash
+python tools/first_contact.py            # FIRST CONTACT OK
+```
+
+## `dc_probe.py`
+
+PC side of [`homebrew/dc_link_probe`](../homebrew/README.md#dc_link_probe):
+tests the serial link to a real Dreamcast without a retail Dreamcast game.
+
+```bash
+python tools/dc_probe.py upload        # push the probe through a dev disc's serial loader
+python tools/dc_probe.py loop          # probe in ECHO mode: 256 bytes there and back
+python tools/dc_probe.py rts           # toggle the adapter's RTS, watch CTS on the probe screen
+python tools/dc_probe.py motm          # probe in FAKE MF2K/DM99 mode: MOTM's whole upload dialogue
+python tools/dc_probe.py listen        # print what the Dreamcast sends (Y on the pad)
+```
+
+`--port` (default `COM7`, or `DC_SERIAL`) picks the serial port; `--bridge
+127.0.0.1:42424` runs the tests through the bridge instead, which also
+reaches the probe running in Flycast with BattleCable on.
+
+`upload` speaks the protocol of DC-LBA2's `DC_SERLOAD` (115200 baud,
+`LBA2LOAD` handshake): start it, then power on the console with that dev
+disc. Any other way of booting `dc_link_probe.elf` on hardware works too.
+
 ## `re/`: probes used on MF2K
 
 These were written to make *Millennium Fight 2000* talk, one hypothesis at a

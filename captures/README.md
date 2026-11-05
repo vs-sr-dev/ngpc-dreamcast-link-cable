@@ -54,3 +54,9 @@ diagnostic bridge modes on, which is visible in the first lines of each log.
 | `comms_null.log` | MOTM in null mode: what it emits with a dead link |
 | `comms_loop.log` | MOTM in loopback |
 | `comms_server.log`, `comms_client.log` | Core-side logs from Ring 2 and from a later retail client run |
+
+## `real_dc/`
+
+| File | What |
+|---|---|
+| `motm_to_probe_30pts_bridge_serial.log` | 2026-11-05. MOTM in RetroArch → bridge in serial mode (`bridge_serial.bat`, COM7, 19200 8N1) → FT232H → a real Japanese Dreamcast running `homebrew/dc_link_probe` in FAKE MF2K mode. 30 points; the whole dialogue takes about 355 ms; MOTM shows its success line. Same format as the other bridge logs, with `SER->DC` / `SER<-DC` in place of the Flycast side; `tools/frames.py` reads it. |

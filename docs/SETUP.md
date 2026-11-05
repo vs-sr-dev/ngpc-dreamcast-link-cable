@@ -146,6 +146,70 @@ Expected: MF2K shows データの受信を完了しました and the points; Kar
 characters are unlocked on MOTM's character select. `logs\bridge.log` holds
 the exchange; `python tools/frames.py logs\bridge.log` prints the six frames.
 
+## 8. Real Dreamcast (prototype)
+
+The bridge can talk to a real Dreamcast's serial port, the port the link
+cable plugged into, through a 3.3 V USB-UART adapter, instead of to Flycast.
+Tested so far with a homebrew stand-in for MF2K on the console (below), not
+yet with the retail game.
+
+```bash
+python -m pip install pyserial
+```
+
+In `launchers\config.bat` set `DC_SERIAL` (e.g. `COM7`) and `DC_BAUD`
+(default 19200).
+
+### Test the cable first, without the game
+
+`homebrew/dc_link_probe` shows on the TV what the console's serial port
+receives, and can answer like MF2K. Build it with its `build.sh`, then boot
+it on the console: as a CD-R (`mkdcdisc` from `dc_link_probe.elf`), or
+through any serial loader. `python tools\dc_probe.py upload` speaks the
+protocol of the DC-LBA2 development disc's loader (`DC_SERLOAD`, 115200
+baud): start it, then power the console on with that disc.
+
+With the probe running (modes are cycled with A on the pad):
+
+1. **ECHO**, then `python tools\dc_probe.py loop`: 256 bytes there and
+   back. Checks the speed, the TX/RX crossing and every bit. Framing
+   errors on screen mean a wrong baud rate.
+2. `python tools\dc_probe.py rts`: the *CTS pin* line on screen follows
+   the adapter's RTS if that wire is there. D-pad down on the pad changes
+   the console's RTS; `dc_probe.py` and the bridge log show it.
+3. **FAKE MF2K**, then `python tools\dc_probe.py motm`: MOTM's whole
+   upload dialogue, every answer compared with the captures.
+4. Still in FAKE MF2K: `launchersridge_serial.bat`, then
+   `launchers\motm_client.bat`, and *Send to DC* in MOTM. The probe logs
+   `DATA 25B pts N chk OK -> echoed`, and Karin confirms the upload.
+
+All four passed on a Japanese Dreamcast with an FT232H adapter
+(`captures/real_dc/`).
+
+### With MF2K
+
+1. Put MF2K on **Download Stand By** on the console.
+2. `launchersridge_serial.bat`
+3. `python toolsirst_contact.py`: it plays MOTM's upload request and
+   says whether MF2K answers with its acknowledgement. Nothing else is
+   needed for this test.
+4. If it does, close it and run `launchers\motm_client.bat` as in the
+   retail test above.
+
+What is known, and what is not:
+
+- **Speed and format.** The NGPC BIOS (`VECT_COMINIT`) programs the UART to
+  19200 baud, 8N1 (`SC0MOD=49h`, `BR0CR=05h`, 6.144 MHz clock). The probe's
+  serial port at 19200 8N1 exchanges clean data with the adapter; whether
+  MF2K programs the same rate is not yet measured.
+- **RTS/CTS.** The same `SC0MOD` value enables CTS flow control on the NGPC,
+  so the real cable carries the handshake lines. Flycast always reports CTS
+  as active (`SCSPTR2_read`), so MF2K may depend on it. The bridge asserts
+  the adapter's RTS (`BRIDGE_SERIAL_RTS=0` to stop) and logs every change of
+  the adapter's CTS input. The probe's `rts` test shows whether your adapter
+  wires those two lines (the FT232H used here wires both).
+- The adapter must be a 3.3 V one made for the Dreamcast's serial port.
+
 ## Capture modes
 
 | Launcher | Use |

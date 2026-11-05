@@ -4,6 +4,7 @@
 # Reads the per-byte lines bridge.py writes:
 #   [  79.201] TCP<-NGPC ff -> UDP->Flycast 'D' ff     (NGPC -> DC)
 #   [  79.248] UDP<-Flycast 'D' ff                      (DC -> NGPC)
+#   [  79.248] SER<-DC ff                               (DC -> NGPC, real Dreamcast)
 # and prints one line per frame, per direction, with the time of its first
 # byte. Bytes outside a frame (the 0x92 cable probe, the VS sync stream) are
 # collapsed into a run count.
@@ -13,7 +14,7 @@
 import re
 import sys
 
-LINE = re.compile(r"^\[\s*([\d.]+)\]\s+(?:TCP<-NGPC ([0-9a-f]{2})|UDP<-Flycast 'D' ([0-9a-f]{2}))")
+LINE = re.compile(r"^\[\s*([\d.]+)\]\s+(?:TCP<-NGPC ([0-9a-f]{2})|(?:UDP<-Flycast 'D'|SER<-DC) ([0-9a-f]{2}))")
 EVENT = re.compile(r"^\[\s*([\d.]+)\]\s+(TCP accept.*|TCP peer .*disconnected|.*\[SYNTH[^\]]*\].*sent.*|.*\[SYNTH-DATA\].*)$")
 
 
